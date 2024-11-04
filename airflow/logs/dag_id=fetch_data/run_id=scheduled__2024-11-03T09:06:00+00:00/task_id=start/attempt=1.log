@@ -1,0 +1,17 @@
+[2024-11-03T09:09:03.652+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T09:09:03.853+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.start scheduled__2024-11-03T09:06:00+00:00 [queued]>
+[2024-11-03T09:09:03.882+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.start scheduled__2024-11-03T09:06:00+00:00 [queued]>
+[2024-11-03T09:09:03.883+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T09:09:04.811+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): start> on 2024-11-03 09:06:00+00:00
+[2024-11-03T09:09:04.865+0000] {standard_task_runner.py:64} INFO - Started process 1998 to run task
+[2024-11-03T09:09:04.898+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'start', 'scheduled__2024-11-03T09:06:00+00:00', '--job-id', '127', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmp8oqeov04']
+[2024-11-03T09:09:04.950+0000] {standard_task_runner.py:91} INFO - Job 127: Subtask start
+[2024-11-03T09:09:05.497+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.start scheduled__2024-11-03T09:06:00+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T09:09:06.876+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data' AIRFLOW_CTX_TASK_ID='start' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T09:06:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-03T09:06:00+00:00'
+[2024-11-03T09:09:06.900+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T09:09:07.034+0000] {logging_mixin.py:188} INFO - Jobs Started
+[2024-11-03T09:09:07.035+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-03T09:09:07.036+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T09:09:07.115+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fetch_data, task_id=start, run_id=scheduled__2024-11-03T09:06:00+00:00, execution_date=20241103T090600, start_date=20241103T090903, end_date=20241103T090907
+[2024-11-03T09:09:07.347+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-11-03T09:09:07.416+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

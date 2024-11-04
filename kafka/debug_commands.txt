@@ -1,0 +1,9 @@
+kafka-topics --list --bootstrap-server http://localhost:9092
+
+# Manually push and read data
+kafka-console-producer--broker-list http://localhost:9092 --topic my-topic
+kafka-console-consumer --bootstrap-server http://localhost:9092 --topic my-topic --from-beginning
+
+
+### DELETING topic
+kafka-topics --bootstrap-server http://localhost:9092 --delete --topic sensor_data

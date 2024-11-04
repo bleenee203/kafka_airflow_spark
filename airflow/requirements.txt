@@ -1,0 +1,11 @@
+kafka-python
+# minio
+pandas
+# pyspark==3.5.0
+apache-airflow
+# apache-airflow-providers-apache-spark
+elasticsearch
+psycopg2-binary
+pyspark==3.4.2
+apache-airflow-providers-apache-spark==4.0.0
+python-dotenv

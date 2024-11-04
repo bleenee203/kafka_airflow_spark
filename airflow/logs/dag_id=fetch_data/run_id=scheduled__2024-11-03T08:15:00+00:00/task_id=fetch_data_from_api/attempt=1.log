@@ -1,0 +1,956 @@
+[2024-11-03T08:29:32.033+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T08:29:33.547+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-03T08:15:00+00:00 [queued]>
+[2024-11-03T08:29:33.724+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-03T08:15:00+00:00 [queued]>
+[2024-11-03T08:29:33.758+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T08:29:37.498+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_from_api> on 2024-11-03 08:15:00+00:00
+[2024-11-03T08:29:38.970+0000] {standard_task_runner.py:64} INFO - Started process 253 to run task
+[2024-11-03T08:29:38.978+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'fetch_data_from_api', 'scheduled__2024-11-03T08:15:00+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmp_yy5r_f7']
+[2024-11-03T08:29:39.498+0000] {standard_task_runner.py:91} INFO - Job 84: Subtask fetch_data_from_api
+[2024-11-03T08:29:44.852+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-03T08:15:00+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T08:29:48.117+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data' AIRFLOW_CTX_TASK_ID='fetch_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T08:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-03T08:15:00+00:00'
+[2024-11-03T08:29:48.210+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T08:29:48.464+0000] {logging_mixin.py:188} INFO - generating
+[2024-11-03T08:29:48.475+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.94, 'humidity': 50.61, 'timestamp': '2024-11-03 08:29:48'}
+[2024-11-03T08:29:48.503+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:48.550+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:48.620+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:48.626+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:48.627+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-03T08:29:50.277+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.94, 'humidity': 50.61, 'timestamp': '2024-11-03 08:29:48'}generating
+[2024-11-03T08:29:50.301+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.8, 'humidity': 50.5, 'timestamp': '2024-11-03 08:29:50'}
+[2024-11-03T08:29:51.412+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.8, 'humidity': 50.5, 'timestamp': '2024-11-03 08:29:50'}generating
+[2024-11-03T08:29:51.493+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.14, 'humidity': 50.7, 'timestamp': '2024-11-03 08:29:51'}
+[2024-11-03T08:29:51.730+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-03T08:29:51.838+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-03T08:29:52.890+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.14, 'humidity': 50.7, 'timestamp': '2024-11-03 08:29:51'}generating
+[2024-11-03T08:29:52.898+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.78, 'humidity': 50.78, 'timestamp': '2024-11-03 08:29:52'}
+[2024-11-03T08:29:54.011+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:54.392+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:54.524+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:54.711+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:54.860+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:54.990+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:55.149+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:55.317+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:55.501+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:55.675+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:55.847+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:56.091+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:56.383+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:56.488+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:56.770+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-03T08:29:57.021+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:57.022+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:57.023+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:57.277+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:57.432+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:57.433+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:57.433+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:57.434+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:57.619+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:57.620+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:57.641+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:29:57.643+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:29:57.729+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:57.905+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:57.975+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:57.998+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:58.025+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:58.026+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:58.242+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:58.244+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:58.250+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:29:58.303+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:29:58.334+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:58.518+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:58.559+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:58.572+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:58.626+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:58.671+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:58.897+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:58.910+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:59.026+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:59.028+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:59.056+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:59.264+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:59.273+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:59.300+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:29:59.414+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:29:59.523+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:59.684+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:59.713+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:59.721+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:59.721+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:59.721+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:29:59.891+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:29:59.903+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:29:59.905+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:29:59.906+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:29:59.909+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:00.155+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:00.222+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:00.250+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:00.259+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:00.265+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:00.455+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:00.477+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:00.478+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:00.519+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:00.563+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:00.721+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:00.722+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:00.724+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:00.726+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:00.727+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:00.930+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:00.955+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:00.958+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:00.973+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:01.006+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:01.171+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:01.172+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:01.239+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:01.240+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:01.241+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:01.480+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:01.500+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:01.501+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:01.501+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:01.501+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:01.655+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:01.658+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:01.664+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:01.665+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:01.666+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:01.852+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:01.880+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:01.882+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:01.882+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:01.927+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:02.133+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:02.146+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:02.162+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:02.296+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:02.328+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:02.630+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:02.654+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:02.660+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:02.661+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:02.662+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:02.884+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:02.886+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:02.920+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:02.924+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:02.932+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:03.184+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:03.185+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:03.218+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:03.429+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:03.431+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:03.608+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:03.611+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:03.624+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:03.658+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:03.659+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:03.857+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:03.915+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:03.924+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:03.924+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:03.925+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:04.092+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:04.105+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:04.106+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:04.106+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:04.107+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:04.282+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:04.293+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:04.327+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:04.342+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:04.343+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:04.507+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:04.531+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:04.580+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:04.580+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:04.581+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:04.747+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:04.759+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:04.760+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:04.765+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:04.786+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:04.944+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:04.970+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:04.976+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:04.977+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:04.980+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:05.142+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:05.148+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:05.168+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:05.170+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:05.170+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:05.353+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:05.357+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:05.405+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:05.415+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:05.416+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:05.609+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:05.680+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:05.737+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:05.738+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:05.738+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:05.915+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:05.936+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:05.937+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:05.938+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:05.939+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:06.240+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:06.241+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:06.298+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:06.301+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:06.301+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:06.493+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:06.545+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:06.546+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:06.547+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:06.547+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:06.752+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:06.758+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:06.768+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:06.769+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:06.769+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:06.992+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:07.004+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:07.019+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:07.030+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:07.034+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:07.196+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:07.197+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:07.208+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:07.284+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:07.312+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:07.517+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:07.518+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:07.544+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:07.551+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:07.564+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:07.747+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:07.748+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:07.749+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:07.762+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:07.762+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:07.927+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:07.931+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:07.935+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:07.935+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:07.945+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:08.106+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:08.113+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:08.164+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:08.166+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:08.167+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:08.400+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:08.414+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:08.449+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:08.452+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:08.461+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:08.669+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:08.728+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:08.730+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:08.730+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:08.731+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:08.998+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:09.013+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:09.054+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:09.055+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:09.056+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:09.233+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:09.236+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:09.240+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:09.254+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:09.255+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:09.407+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:09.411+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:09.412+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:09.415+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:09.418+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:09.648+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:09.653+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:09.681+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:09.733+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:09.751+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:09.944+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:09.999+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:10.009+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:10.010+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:10.010+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:10.317+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:10.328+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:10.364+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:10.365+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:10.365+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:10.596+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:10.647+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:10.648+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:10.649+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:10.649+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:10.829+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:10.846+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:10.847+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:10.850+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:10.854+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:11.044+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:11.049+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:11.056+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:11.078+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:11.079+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:11.327+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:11.345+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:11.380+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:11.381+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:11.382+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:11.591+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:11.595+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:11.617+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:11.618+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:11.618+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:11.868+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:11.919+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:12.027+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:12.027+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:12.028+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:12.207+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:12.208+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:12.231+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:12.232+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:12.233+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:12.438+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:12.452+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:12.467+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:12.468+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:12.517+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:12.671+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:12.677+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:12.684+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:12.684+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:12.685+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:12.848+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:12.849+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:12.850+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:12.851+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:12.851+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:13.009+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:13.019+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:13.021+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:13.021+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:13.037+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:13.191+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:13.199+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:13.201+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:13.203+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:13.203+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:13.369+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:13.407+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:13.408+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:13.408+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:13.409+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:13.568+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:13.573+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:13.574+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:13.585+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:13.585+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:13.844+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:13.847+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:13.850+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:13.851+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:13.853+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:14.066+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:14.071+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:14.087+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:14.087+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:14.087+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:14.249+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:14.262+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:14.263+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:14.264+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:14.266+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:14.430+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:14.443+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:14.444+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:14.444+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:14.444+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:14.607+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:14.608+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:14.669+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:14.670+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:14.672+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:14.884+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:14.957+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:14.968+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:14.969+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:14.984+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:15.171+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:15.175+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:15.177+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:15.179+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:15.181+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:15.353+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:15.357+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:15.362+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:15.364+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:15.365+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:15.552+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:15.563+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:15.569+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:15.571+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:15.572+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:15.793+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:15.795+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:15.796+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:15.820+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:15.820+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:16.009+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:16.011+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:16.015+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:16.018+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:16.019+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:16.176+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:16.184+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:16.190+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:16.198+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:16.199+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:16.378+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:16.379+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:16.384+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:16.384+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:16.385+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:16.567+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:16.577+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:16.598+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:16.598+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:16.599+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:16.757+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:16.767+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:16.771+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:16.772+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:16.774+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:16.961+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:16.977+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:16.978+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:17.001+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:17.008+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:17.178+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:17.190+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:17.191+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:17.191+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:17.192+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:17.371+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:17.396+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:17.457+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:17.476+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:17.477+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:17.644+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:17.647+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:17.648+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:17.648+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:17.649+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:17.832+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:17.839+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:17.847+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:17.847+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:17.848+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:18.032+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:18.036+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:18.038+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:18.039+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:18.040+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:18.246+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:18.259+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:18.274+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:18.276+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:18.277+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:18.528+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:18.530+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:18.533+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:18.533+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:18.534+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:18.730+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:18.740+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:18.773+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:18.776+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:18.778+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:18.963+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:18.968+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:18.995+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:18.996+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:19.019+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:19.257+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:19.378+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:19.428+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:19.429+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:19.433+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:19.607+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:19.610+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:19.617+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:19.627+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:19.661+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:19.840+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:19.846+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:19.852+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:19.853+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:19.853+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:20.010+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:20.011+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:20.024+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:20.030+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:20.032+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:20.193+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:20.198+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:20.200+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:20.201+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:20.201+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:20.365+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:20.369+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:20.372+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:20.375+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:20.385+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:20.570+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:20.580+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:20.581+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:20.581+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:20.582+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:20.756+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:20.768+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:20.770+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:20.771+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:20.772+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:20.933+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:20.934+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:20.935+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:20.936+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:20.936+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:21.261+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:21.294+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:21.329+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:21.329+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:21.330+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:21.514+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:21.517+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:21.518+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:21.518+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:21.518+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:21.733+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:21.735+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:21.735+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:21.736+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:21.736+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:21.959+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:21.963+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:21.984+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:21.995+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:22.030+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:22.249+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:22.255+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:22.261+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:22.280+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:22.285+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:22.496+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:22.520+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:22.521+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:22.521+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:22.522+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:22.692+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:22.701+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:22.732+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:22.733+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:22.733+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:22.926+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-03T08:30:22.937+0000] {record_accumulator.py:534} WARNING - KafkaTimeoutError: Batch for TopicPartition(topic='raw_data', partition=0) containing 1 record(s) expired: 30 seconds have passed since batch creation plus linger time
+[2024-11-03T08:30:22.937+0000] {record_accumulator.py:332} WARNING - Expired 1 batches in accumulator
+[2024-11-03T08:30:22.938+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:22.945+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:22.952+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:22.957+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:22.957+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:23.151+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:23.189+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:23.201+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:23.214+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:23.216+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:23.376+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:23.378+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:23.380+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:23.381+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:23.383+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:23.547+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:23.551+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:23.570+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:23.570+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:23.571+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:23.730+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:23.734+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:23.735+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:23.736+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:23.737+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:23.901+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:23.908+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:23.924+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:23.925+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:23.925+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:23.949+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.78, 'humidity': 50.78, 'timestamp': '2024-11-03 08:29:52'}generating
+[2024-11-03T08:30:23.949+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.93, 'humidity': 50.29, 'timestamp': '2024-11-03 08:30:23'}
+[2024-11-03T08:30:24.084+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:24.093+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:24.098+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:24.099+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:24.102+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:24.439+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:24.460+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:24.461+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:24.462+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:24.462+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:24.791+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:24.793+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:24.819+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:24.821+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:24.830+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:24.988+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:24.993+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:25.013+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:25.014+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:25.017+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:25.189+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:25.198+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:25.205+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:25.239+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:25.240+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:25.434+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:25.437+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:25.471+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:25.471+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:25.471+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:25.661+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:25.673+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:25.680+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:25.680+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:25.681+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:25.888+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:25.889+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:25.893+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:25.896+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:25.897+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:26.261+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:26.269+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:26.281+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:26.283+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:26.284+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:26.520+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:26.521+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:26.526+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:26.530+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:26.532+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:27.690+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:27.927+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:27.932+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:27.932+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:27.933+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:28.432+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:28.492+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:28.654+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:28.654+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:28.655+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:28.814+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:28.916+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:28.966+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:29.030+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:29.157+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:29.354+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:29.366+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:29.383+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:29.440+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:29.441+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:29.736+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:29.737+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:29.808+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:29.809+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:29.809+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:30.077+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:30.078+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:30.084+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:30.085+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:30.085+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:30.467+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:30.491+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:30.493+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:30.579+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:30.650+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:30.904+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:30.906+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:30.913+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:30.915+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:30.916+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:31.222+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:31.224+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:31.227+0000] {conn.py:1107} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Error receiving network data closing socket
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/conn.py", line 1090, in _recv
+    data = self._sock.recv(self.config['sock_chunk_bytes'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:31.228+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: [Errno 104] Connection reset by peer
+[2024-11-03T08:30:31.228+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:31.456+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:31.459+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:31.472+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:31.498+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:31.499+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:31.674+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:31.679+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T08:30:31.680+0000] {conn.py:1096} ERROR - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: socket disconnected
+[2024-11-03T08:30:31.686+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: socket disconnected
+[2024-11-03T08:30:31.689+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:31.852+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:31.860+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:31.861+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:31.867+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:32.041+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:32.045+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:32.048+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:32.049+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:32.330+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:32.330+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:32.331+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:32.331+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:33.004+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:33.018+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:33.031+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:33.033+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:33.856+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:33.857+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:33.858+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:33.859+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:34.958+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:34.971+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:34.972+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:34.975+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:35.828+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:35.831+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:35.831+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:35.832+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:37.131+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:37.132+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:37.133+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:37.134+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:38.416+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:38.418+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:38.418+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:38.419+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:39.340+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:39.341+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:39.342+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:39.345+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:40.387+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:40.388+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:40.389+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:40.390+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:41.315+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:41.323+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:41.324+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:41.325+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:42.212+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:42.215+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:42.216+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:42.216+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:43.301+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:43.303+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:43.305+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:43.307+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:44.614+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:44.616+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:44.617+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:44.620+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:45.815+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:45.822+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:45.823+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:45.824+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:46.726+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:46.727+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:46.728+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:46.729+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:47.875+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:47.881+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:47.888+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:47.894+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:48.768+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:48.771+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:48.772+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:48.777+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:50.096+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:50.126+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:50.134+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:50.135+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:51.443+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:51.444+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:51.444+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:51.445+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:52.783+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:52.784+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:52.796+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:52.817+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:53.915+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T08:30:53.917+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]> returned error 111. Disconnecting.
+[2024-11-03T08:30:53.952+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-11-03T08:30:53.952+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-03T08:30:53.953+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-03T08:30:53.955+0000] {record_accumulator.py:534} WARNING - KafkaTimeoutError: Batch for TopicPartition(topic='raw_data', partition=0) containing 1 record(s) expired: 30 seconds have passed since batch creation plus linger time
+[2024-11-03T08:30:53.955+0000] {record_accumulator.py:332} WARNING - Expired 1 batches in accumulator
+[2024-11-03T08:30:54.972+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-03T08:30:54.990+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T08:30:55.093+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fetch_data, task_id=fetch_data_from_api, run_id=scheduled__2024-11-03T08:15:00+00:00, execution_date=20241103T081500, start_date=20241103T082933, end_date=20241103T083055
+[2024-11-03T08:30:55.246+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.93, 'humidity': 50.29, 'timestamp': '2024-11-03 08:30:23'}
+[2024-11-03T08:30:55.418+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-11-03T08:30:55.504+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-03T08:30:55.522+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

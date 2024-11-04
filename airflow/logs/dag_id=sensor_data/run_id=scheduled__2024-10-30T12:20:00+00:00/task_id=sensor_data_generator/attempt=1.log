@@ -1,0 +1,56 @@
+[2024-10-30T12:25:03.307+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-30T12:25:03.680+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data.sensor_data_generator scheduled__2024-10-30T12:20:00+00:00 [queued]>
+[2024-10-30T12:25:03.694+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data.sensor_data_generator scheduled__2024-10-30T12:20:00+00:00 [queued]>
+[2024-10-30T12:25:03.695+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-30T12:25:03.737+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): sensor_data_generator> on 2024-10-30 12:20:00+00:00
+[2024-10-30T12:25:03.760+0000] {standard_task_runner.py:64} INFO - Started process 342 to run task
+[2024-10-30T12:25:03.768+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data', 'sensor_data_generator', 'scheduled__2024-10-30T12:20:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/sensor_***.py', '--cfg-path', '/tmp/tmpv0fuijhq']
+[2024-10-30T12:25:03.776+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask sensor_data_generator
+[2024-10-30T12:25:03.984+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data.sensor_data_generator scheduled__2024-10-30T12:20:00+00:00 [running]> on host 0258b3d3fb2b
+[2024-10-30T12:25:04.560+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Prabakar Sundar' AIRFLOW_CTX_DAG_ID='sensor_data' AIRFLOW_CTX_TASK_ID='sensor_data_generator' AIRFLOW_CTX_EXECUTION_DATE='2024-10-30T12:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-30T12:20:00+00:00'
+[2024-10-30T12:25:04.570+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-30T12:25:04.592+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2024-10-30T12:25:04.593+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2024-10-30T12:25:04.593+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> returned error 111. Disconnecting.
+[2024-10-30T12:25:04.594+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-10-30T12:25:04.642+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+[2024-10-30T12:25:04.643+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]> returned error 111. Disconnecting.
+[2024-10-30T12:25:04.643+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-10-30T12:25:04.701+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+[2024-10-30T12:25:04.705+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> returned error 111. Disconnecting.
+[2024-10-30T12:25:04.706+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2024-10-30T12:25:04.707+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-30T12:25:04.708+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/sensor_airflow.py", line 24, in stream_data
+    producer = KafkaProducer(bootstrap_servers=['localhost:9092'], max_block_ms=5000)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/producer/kafka.py", line 381, in __init__
+    client = KafkaClient(metrics=self._metrics, metric_group_prefix='producer',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/client_async.py", line 244, in __init__
+    self.config['api_version'] = self.check_version(timeout=check_timeout)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/kafka/client_async.py", line 900, in check_version
+    raise Errors.NoBrokersAvailable()
+kafka.errors.NoBrokersAvailable: NoBrokersAvailable
+[2024-10-30T12:25:04.777+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=sensor_data, task_id=sensor_data_generator, run_id=scheduled__2024-10-30T12:20:00+00:00, execution_date=20241030T122000, start_date=20241030T122503, end_date=20241030T122504
+[2024-10-30T12:25:04.869+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 20 for task sensor_data_generator (NoBrokersAvailable; 342)
+[2024-10-30T12:25:05.164+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-10-30T12:25:05.252+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-30T12:25:05.276+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

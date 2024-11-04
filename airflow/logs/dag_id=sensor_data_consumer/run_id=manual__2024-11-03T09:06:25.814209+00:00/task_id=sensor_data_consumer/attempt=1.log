@@ -1,0 +1,136 @@
+[2024-11-03T09:06:37.938+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T09:06:38.042+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T09:06:25.814209+00:00 [queued]>
+[2024-11-03T09:06:38.061+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T09:06:25.814209+00:00 [queued]>
+[2024-11-03T09:06:38.065+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T09:06:38.102+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): sensor_data_consumer> on 2024-11-03 09:06:25.814209+00:00
+[2024-11-03T09:06:38.124+0000] {standard_task_runner.py:64} INFO - Started process 1871 to run task
+[2024-11-03T09:06:38.136+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data_consumer', 'sensor_data_consumer', 'manual__2024-11-03T09:06:25.814209+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/***_consumer.py', '--cfg-path', '/tmp/tmp5trn6u6y']
+[2024-11-03T09:06:38.139+0000] {standard_task_runner.py:91} INFO - Job 124: Subtask sensor_data_consumer
+[2024-11-03T09:06:38.324+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T09:06:25.814209+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T09:06:38.757+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='sensor_data_consumer' AIRFLOW_CTX_TASK_ID='sensor_data_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T09:06:25.814209+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-03T09:06:25.814209+00:00'
+[2024-11-03T09:06:38.758+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T09:06:38.817+0000] {spark_submit.py:222} INFO - Could not load connection string spark_default, defaulting to yarn
+[2024-11-03T09:06:38.821+0000] {spark_submit.py:344} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop-3.2.1/etc/hadoop --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:7.7.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py
+[2024-11-03T09:07:12.242+0000] {spark_submit.py:495} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-11-03T09:07:13.355+0000] {spark_submit.py:495} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2024-11-03T09:07:13.356+0000] {spark_submit.py:495} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2024-11-03T09:07:13.389+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12 added as a dependency
+[2024-11-03T09:07:13.391+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-11-03T09:07:13.395+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client added as a dependency
+[2024-11-03T09:07:13.400+0000] {spark_submit.py:495} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-36e4935c-3d72-4925-b829-852a7500a890;1.0
+[2024-11-03T09:07:13.401+0000] {spark_submit.py:495} INFO - confs: [default]
+[2024-11-03T09:07:14.929+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2 in central
+[2024-11-03T09:07:15.303+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.2 in central
+[2024-11-03T09:07:15.589+0000] {spark_submit.py:495} INFO - found org.apache.kafka#kafka-clients;3.3.2 in central
+[2024-11-03T09:07:15.903+0000] {spark_submit.py:495} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-11-03T09:07:16.097+0000] {spark_submit.py:495} INFO - found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2024-11-03T09:07:16.185+0000] {spark_submit.py:495} INFO - found org.slf4j#slf4j-api;2.0.6 in central
+[2024-11-03T09:07:16.293+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2024-11-03T09:07:16.373+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2024-11-03T09:07:17.001+0000] {spark_submit.py:495} INFO - found commons-logging#commons-logging;1.1.3 in central
+[2024-11-03T09:07:17.002+0000] {spark_submit.py:495} INFO - found com.google.code.findbugs#jsr305;3.0.0 in central
+[2024-11-03T09:07:17.491+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2 in central
+[2024-11-03T09:07:17.833+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-pool2;2.11.1 in central
+[2024-11-03T09:07:31.523+0000] {spark_submit.py:495} INFO - :: resolution report :: resolve 17765ms :: artifacts dl 354ms
+[2024-11-03T09:07:31.529+0000] {spark_submit.py:495} INFO - :: modules in use:
+[2024-11-03T09:07:31.532+0000] {spark_submit.py:495} INFO - com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2024-11-03T09:07:31.536+0000] {spark_submit.py:495} INFO - commons-logging#commons-logging;1.1.3 from central in [default]
+[2024-11-03T09:07:31.537+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2024-11-03T09:07:31.539+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2024-11-03T09:07:31.563+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2024-11-03T09:07:31.563+0000] {spark_submit.py:495} INFO - org.apache.kafka#kafka-clients;3.3.2 from central in [default]
+[2024-11-03T09:07:31.564+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2 from central in [default]
+[2024-11-03T09:07:31.574+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2 from central in [default]
+[2024-11-03T09:07:31.576+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.2 from central in [default]
+[2024-11-03T09:07:31.577+0000] {spark_submit.py:495} INFO - org.lz4#lz4-java;1.8.0 from central in [default]
+[2024-11-03T09:07:31.578+0000] {spark_submit.py:495} INFO - org.slf4j#slf4j-api;2.0.6 from central in [default]
+[2024-11-03T09:07:31.579+0000] {spark_submit.py:495} INFO - org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2024-11-03T09:07:31.580+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-03T09:07:31.581+0000] {spark_submit.py:495} INFO - |                  |            modules            ||   artifacts   |
+[2024-11-03T09:07:31.582+0000] {spark_submit.py:495} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2024-11-03T09:07:31.583+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-03T09:07:31.584+0000] {spark_submit.py:495} INFO - |      default     |   13  |   0   |   0   |   0   ||   12  |   0   |
+[2024-11-03T09:07:31.585+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-03T09:07:31.586+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.587+0000] {spark_submit.py:495} INFO - :: problems summary ::
+[2024-11-03T09:07:31.587+0000] {spark_submit.py:495} INFO - :::: WARNINGS
+[2024-11-03T09:07:31.587+0000] {spark_submit.py:495} INFO - module not found: org.apache.hadoop#hadoop-client;7.7.1
+[2024-11-03T09:07:31.588+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.588+0000] {spark_submit.py:495} INFO - ==== local-m2-cache: tried
+[2024-11-03T09:07:31.588+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.589+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/hadoop/hadoop-client/7.7.1/hadoop-client-7.7.1.pom
+[2024-11-03T09:07:31.589+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.589+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;7.7.1!hadoop-client.jar:
+[2024-11-03T09:07:31.590+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.590+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/hadoop/hadoop-client/7.7.1/hadoop-client-7.7.1.jar
+[2024-11-03T09:07:31.591+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.591+0000] {spark_submit.py:495} INFO - ==== local-ivy-cache: tried
+[2024-11-03T09:07:31.591+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.591+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.hadoop/hadoop-client/7.7.1/ivys/ivy.xml
+[2024-11-03T09:07:31.592+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.592+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;7.7.1!hadoop-client.jar:
+[2024-11-03T09:07:31.592+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.593+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.hadoop/hadoop-client/7.7.1/jars/hadoop-client.jar
+[2024-11-03T09:07:31.593+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.593+0000] {spark_submit.py:495} INFO - ==== central: tried
+[2024-11-03T09:07:31.594+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.594+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/7.7.1/hadoop-client-7.7.1.pom
+[2024-11-03T09:07:31.594+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.595+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;7.7.1!hadoop-client.jar:
+[2024-11-03T09:07:31.595+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.595+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/7.7.1/hadoop-client-7.7.1.jar
+[2024-11-03T09:07:31.596+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.596+0000] {spark_submit.py:495} INFO - ==== spark-packages: tried
+[2024-11-03T09:07:31.596+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.597+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/hadoop/hadoop-client/7.7.1/hadoop-client-7.7.1.pom
+[2024-11-03T09:07:31.597+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.597+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;7.7.1!hadoop-client.jar:
+[2024-11-03T09:07:31.598+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.598+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/hadoop/hadoop-client/7.7.1/hadoop-client-7.7.1.jar
+[2024-11-03T09:07:31.598+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.599+0000] {spark_submit.py:495} INFO - ::::::::::::::::::::::::::::::::::::::::::::::
+[2024-11-03T09:07:31.599+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.599+0000] {spark_submit.py:495} INFO - ::          UNRESOLVED DEPENDENCIES         ::
+[2024-11-03T09:07:31.599+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.600+0000] {spark_submit.py:495} INFO - ::::::::::::::::::::::::::::::::::::::::::::::
+[2024-11-03T09:07:31.600+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.600+0000] {spark_submit.py:495} INFO - :: org.apache.hadoop#hadoop-client;7.7.1: not found
+[2024-11-03T09:07:31.601+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.601+0000] {spark_submit.py:495} INFO - ::::::::::::::::::::::::::::::::::::::::::::::
+[2024-11-03T09:07:31.601+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.602+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.602+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T09:07:31.602+0000] {spark_submit.py:495} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2024-11-03T09:07:31.603+0000] {spark_submit.py:495} INFO - Exception in thread "main" java.lang.RuntimeException: [unresolved dependency: org.apache.hadoop#hadoop-client;7.7.1: not found]
+[2024-11-03T09:07:31.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1528)
+[2024-11-03T09:07:31.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2024-11-03T09:07:31.604+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:332)
+[2024-11-03T09:07:31.604+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:955)
+[2024-11-03T09:07:31.604+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:192)
+[2024-11-03T09:07:31.605+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:215)
+[2024-11-03T09:07:31.605+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+[2024-11-03T09:07:31.605+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1111)
+[2024-11-03T09:07:31.606+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1120)
+[2024-11-03T09:07:31.606+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2024-11-03T09:07:31.744+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T09:07:31.797+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 426, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop-3.2.1/etc/hadoop --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:7.7.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.
+[2024-11-03T09:07:31.843+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=sensor_data_consumer, task_id=sensor_data_consumer, run_id=manual__2024-11-03T09:06:25.814209+00:00, execution_date=20241103T090625, start_date=20241103T090638, end_date=20241103T090731
+[2024-11-03T09:07:31.884+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 124 for task sensor_data_consumer (Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop-3.2.1/etc/hadoop --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:7.7.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.; 1871)
+[2024-11-03T09:07:31.923+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-11-03T09:07:32.073+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-03T09:07:32.190+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

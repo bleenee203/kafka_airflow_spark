@@ -1,0 +1,140 @@
+[2024-11-03T12:00:05.748+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T12:00:05.881+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-03T11:57:00+00:00 [queued]>
+[2024-11-03T12:00:05.902+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-03T11:57:00+00:00 [queued]>
+[2024-11-03T12:00:05.902+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T12:00:06.188+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_from_api> on 2024-11-03 11:57:00+00:00
+[2024-11-03T12:00:06.269+0000] {standard_task_runner.py:64} INFO - Started process 1227 to run task
+[2024-11-03T12:00:06.286+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'fetch_data_from_api', 'scheduled__2024-11-03T11:57:00+00:00', '--job-id', '325', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmpg4i049at']
+[2024-11-03T12:00:06.296+0000] {standard_task_runner.py:91} INFO - Job 325: Subtask fetch_data_from_api
+[2024-11-03T12:00:06.514+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-03T11:57:00+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T12:00:06.895+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data' AIRFLOW_CTX_TASK_ID='fetch_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T11:57:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-03T11:57:00+00:00'
+[2024-11-03T12:00:06.896+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T12:00:06.939+0000] {logging_mixin.py:188} INFO - generating
+[2024-11-03T12:00:06.940+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.63, 'humidity': 50.5, 'timestamp': '2024-11-03 12:00:06'}
+[2024-11-03T12:00:06.943+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T12:00:06.945+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T12:00:06.952+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-03T12:00:06.954+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-03T12:00:06.955+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-03T12:00:07.966+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.63, 'humidity': 50.5, 'timestamp': '2024-11-03 12:00:06'}generating
+[2024-11-03T12:00:07.967+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.47, 'humidity': 50.92, 'timestamp': '2024-11-03 12:00:07'}
+[2024-11-03T12:00:08.986+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.47, 'humidity': 50.92, 'timestamp': '2024-11-03 12:00:07'}generating
+[2024-11-03T12:00:08.987+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.04, 'humidity': 50.16, 'timestamp': '2024-11-03 12:00:08'}
+[2024-11-03T12:00:10.012+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.04, 'humidity': 50.16, 'timestamp': '2024-11-03 12:00:08'}generating
+[2024-11-03T12:00:10.013+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.95, 'humidity': 50.48, 'timestamp': '2024-11-03 12:00:10'}
+[2024-11-03T12:00:11.046+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.95, 'humidity': 50.48, 'timestamp': '2024-11-03 12:00:10'}generating
+[2024-11-03T12:00:11.049+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.24, 'humidity': 50.11, 'timestamp': '2024-11-03 12:00:11'}
+[2024-11-03T12:00:12.075+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.24, 'humidity': 50.11, 'timestamp': '2024-11-03 12:00:11'}generating
+[2024-11-03T12:00:12.076+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.5, 'humidity': 50.32, 'timestamp': '2024-11-03 12:00:12'}
+[2024-11-03T12:00:13.099+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.5, 'humidity': 50.32, 'timestamp': '2024-11-03 12:00:12'}generating
+[2024-11-03T12:00:13.100+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.07, 'humidity': 50.49, 'timestamp': '2024-11-03 12:00:13'}
+[2024-11-03T12:00:14.122+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.07, 'humidity': 50.49, 'timestamp': '2024-11-03 12:00:13'}generating
+[2024-11-03T12:00:14.124+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.99, 'humidity': 50.03, 'timestamp': '2024-11-03 12:00:14'}
+[2024-11-03T12:00:15.160+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.99, 'humidity': 50.03, 'timestamp': '2024-11-03 12:00:14'}generating
+[2024-11-03T12:00:15.181+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.45, 'humidity': 50.87, 'timestamp': '2024-11-03 12:00:15'}
+[2024-11-03T12:00:16.612+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.45, 'humidity': 50.87, 'timestamp': '2024-11-03 12:00:15'}generating
+[2024-11-03T12:00:16.613+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.3, 'humidity': 50.44, 'timestamp': '2024-11-03 12:00:16'}
+[2024-11-03T12:00:18.172+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.3, 'humidity': 50.44, 'timestamp': '2024-11-03 12:00:16'}generating
+[2024-11-03T12:00:18.173+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.91, 'humidity': 50.06, 'timestamp': '2024-11-03 12:00:18'}
+[2024-11-03T12:00:19.325+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.91, 'humidity': 50.06, 'timestamp': '2024-11-03 12:00:18'}generating
+[2024-11-03T12:00:19.325+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.77, 'humidity': 50.95, 'timestamp': '2024-11-03 12:00:19'}
+[2024-11-03T12:00:20.351+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.77, 'humidity': 50.95, 'timestamp': '2024-11-03 12:00:19'}generating
+[2024-11-03T12:00:20.352+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.81, 'humidity': 50.31, 'timestamp': '2024-11-03 12:00:20'}
+[2024-11-03T12:00:21.380+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.81, 'humidity': 50.31, 'timestamp': '2024-11-03 12:00:20'}generating
+[2024-11-03T12:00:21.384+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.71, 'humidity': 50.61, 'timestamp': '2024-11-03 12:00:21'}
+[2024-11-03T12:00:22.396+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.71, 'humidity': 50.61, 'timestamp': '2024-11-03 12:00:21'}generating
+[2024-11-03T12:00:22.401+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.5, 'humidity': 50.81, 'timestamp': '2024-11-03 12:00:22'}
+[2024-11-03T12:00:23.409+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.5, 'humidity': 50.81, 'timestamp': '2024-11-03 12:00:22'}generating
+[2024-11-03T12:00:23.409+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.6, 'humidity': 50.57, 'timestamp': '2024-11-03 12:00:23'}
+[2024-11-03T12:00:24.434+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.6, 'humidity': 50.57, 'timestamp': '2024-11-03 12:00:23'}generating
+[2024-11-03T12:00:24.446+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.58, 'humidity': 50.03, 'timestamp': '2024-11-03 12:00:24'}
+[2024-11-03T12:00:25.467+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.58, 'humidity': 50.03, 'timestamp': '2024-11-03 12:00:24'}generating
+[2024-11-03T12:00:25.468+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.24, 'humidity': 50.89, 'timestamp': '2024-11-03 12:00:25'}
+[2024-11-03T12:00:26.473+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.24, 'humidity': 50.89, 'timestamp': '2024-11-03 12:00:25'}generating
+[2024-11-03T12:00:26.476+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.1, 'humidity': 50.98, 'timestamp': '2024-11-03 12:00:26'}
+[2024-11-03T12:00:27.484+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.1, 'humidity': 50.98, 'timestamp': '2024-11-03 12:00:26'}generating
+[2024-11-03T12:00:27.485+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.33, 'humidity': 50.15, 'timestamp': '2024-11-03 12:00:27'}
+[2024-11-03T12:00:28.492+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.33, 'humidity': 50.15, 'timestamp': '2024-11-03 12:00:27'}generating
+[2024-11-03T12:00:28.494+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.77, 'humidity': 50.49, 'timestamp': '2024-11-03 12:00:28'}
+[2024-11-03T12:00:29.501+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.77, 'humidity': 50.49, 'timestamp': '2024-11-03 12:00:28'}generating
+[2024-11-03T12:00:29.502+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.16, 'humidity': 50.74, 'timestamp': '2024-11-03 12:00:29'}
+[2024-11-03T12:00:30.525+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.16, 'humidity': 50.74, 'timestamp': '2024-11-03 12:00:29'}generating
+[2024-11-03T12:00:30.527+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.82, 'humidity': 50.16, 'timestamp': '2024-11-03 12:00:30'}
+[2024-11-03T12:00:31.533+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.82, 'humidity': 50.16, 'timestamp': '2024-11-03 12:00:30'}generating
+[2024-11-03T12:00:31.534+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.87, 'humidity': 50.23, 'timestamp': '2024-11-03 12:00:31'}
+[2024-11-03T12:00:32.542+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.87, 'humidity': 50.23, 'timestamp': '2024-11-03 12:00:31'}generating
+[2024-11-03T12:00:32.545+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.49, 'humidity': 50.35, 'timestamp': '2024-11-03 12:00:32'}
+[2024-11-03T12:00:33.553+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.49, 'humidity': 50.35, 'timestamp': '2024-11-03 12:00:32'}generating
+[2024-11-03T12:00:33.554+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.52, 'humidity': 50.64, 'timestamp': '2024-11-03 12:00:33'}
+[2024-11-03T12:00:34.562+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.52, 'humidity': 50.64, 'timestamp': '2024-11-03 12:00:33'}generating
+[2024-11-03T12:00:34.562+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.58, 'humidity': 50.56, 'timestamp': '2024-11-03 12:00:34'}
+[2024-11-03T12:00:35.569+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.58, 'humidity': 50.56, 'timestamp': '2024-11-03 12:00:34'}generating
+[2024-11-03T12:00:35.569+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.14, 'humidity': 50.16, 'timestamp': '2024-11-03 12:00:35'}
+[2024-11-03T12:00:36.591+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.14, 'humidity': 50.16, 'timestamp': '2024-11-03 12:00:35'}generating
+[2024-11-03T12:00:36.601+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.9, 'humidity': 50.31, 'timestamp': '2024-11-03 12:00:36'}
+[2024-11-03T12:00:37.646+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.9, 'humidity': 50.31, 'timestamp': '2024-11-03 12:00:36'}generating
+[2024-11-03T12:00:37.647+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.23, 'humidity': 50.28, 'timestamp': '2024-11-03 12:00:37'}
+[2024-11-03T12:00:38.659+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.23, 'humidity': 50.28, 'timestamp': '2024-11-03 12:00:37'}generating
+[2024-11-03T12:00:38.660+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.69, 'humidity': 50.82, 'timestamp': '2024-11-03 12:00:38'}
+[2024-11-03T12:00:39.671+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.69, 'humidity': 50.82, 'timestamp': '2024-11-03 12:00:38'}generating
+[2024-11-03T12:00:39.671+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.67, 'humidity': 50.3, 'timestamp': '2024-11-03 12:00:39'}
+[2024-11-03T12:00:40.677+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.67, 'humidity': 50.3, 'timestamp': '2024-11-03 12:00:39'}generating
+[2024-11-03T12:00:40.678+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.87, 'humidity': 50.62, 'timestamp': '2024-11-03 12:00:40'}
+[2024-11-03T12:00:41.686+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.87, 'humidity': 50.62, 'timestamp': '2024-11-03 12:00:40'}generating
+[2024-11-03T12:00:41.687+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.09, 'humidity': 50.75, 'timestamp': '2024-11-03 12:00:41'}
+[2024-11-03T12:00:42.723+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.09, 'humidity': 50.75, 'timestamp': '2024-11-03 12:00:41'}generating
+[2024-11-03T12:00:42.725+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.79, 'humidity': 50.08, 'timestamp': '2024-11-03 12:00:42'}
+[2024-11-03T12:00:43.732+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.79, 'humidity': 50.08, 'timestamp': '2024-11-03 12:00:42'}generating
+[2024-11-03T12:00:43.733+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.39, 'humidity': 50.56, 'timestamp': '2024-11-03 12:00:43'}
+[2024-11-03T12:00:44.741+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.39, 'humidity': 50.56, 'timestamp': '2024-11-03 12:00:43'}generating
+[2024-11-03T12:00:44.742+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.28, 'humidity': 50.42, 'timestamp': '2024-11-03 12:00:44'}
+[2024-11-03T12:00:45.749+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.28, 'humidity': 50.42, 'timestamp': '2024-11-03 12:00:44'}generating
+[2024-11-03T12:00:45.751+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.31, 'humidity': 50.51, 'timestamp': '2024-11-03 12:00:45'}
+[2024-11-03T12:00:46.763+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.31, 'humidity': 50.51, 'timestamp': '2024-11-03 12:00:45'}generating
+[2024-11-03T12:00:46.766+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.57, 'humidity': 50.69, 'timestamp': '2024-11-03 12:00:46'}
+[2024-11-03T12:00:47.775+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.57, 'humidity': 50.69, 'timestamp': '2024-11-03 12:00:46'}generating
+[2024-11-03T12:00:47.776+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.88, 'humidity': 50.94, 'timestamp': '2024-11-03 12:00:47'}
+[2024-11-03T12:00:48.842+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.88, 'humidity': 50.94, 'timestamp': '2024-11-03 12:00:47'}generating
+[2024-11-03T12:00:48.865+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.12, 'humidity': 50.84, 'timestamp': '2024-11-03 12:00:48'}
+[2024-11-03T12:00:49.948+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.12, 'humidity': 50.84, 'timestamp': '2024-11-03 12:00:48'}generating
+[2024-11-03T12:00:49.958+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.47, 'humidity': 50.45, 'timestamp': '2024-11-03 12:00:49'}
+[2024-11-03T12:00:51.215+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.47, 'humidity': 50.45, 'timestamp': '2024-11-03 12:00:49'}generating
+[2024-11-03T12:00:51.258+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.62, 'humidity': 50.21, 'timestamp': '2024-11-03 12:00:51'}
+[2024-11-03T12:00:52.360+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.62, 'humidity': 50.21, 'timestamp': '2024-11-03 12:00:51'}generating
+[2024-11-03T12:00:52.362+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.59, 'humidity': 50.58, 'timestamp': '2024-11-03 12:00:52'}
+[2024-11-03T12:00:53.394+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.59, 'humidity': 50.58, 'timestamp': '2024-11-03 12:00:52'}generating
+[2024-11-03T12:00:53.500+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.32, 'humidity': 50.75, 'timestamp': '2024-11-03 12:00:53'}
+[2024-11-03T12:00:54.560+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.32, 'humidity': 50.75, 'timestamp': '2024-11-03 12:00:53'}generating
+[2024-11-03T12:00:54.566+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.93, 'humidity': 50.75, 'timestamp': '2024-11-03 12:00:54'}
+[2024-11-03T12:00:55.576+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.93, 'humidity': 50.75, 'timestamp': '2024-11-03 12:00:54'}generating
+[2024-11-03T12:00:55.581+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.74, 'humidity': 50.36, 'timestamp': '2024-11-03 12:00:55'}
+[2024-11-03T12:00:56.597+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.74, 'humidity': 50.36, 'timestamp': '2024-11-03 12:00:55'}generating
+[2024-11-03T12:00:56.598+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.35, 'humidity': 50.82, 'timestamp': '2024-11-03 12:00:56'}
+[2024-11-03T12:00:57.614+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.35, 'humidity': 50.82, 'timestamp': '2024-11-03 12:00:56'}generating
+[2024-11-03T12:00:57.614+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.16, 'humidity': 50.37, 'timestamp': '2024-11-03 12:00:57'}
+[2024-11-03T12:00:58.632+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.16, 'humidity': 50.37, 'timestamp': '2024-11-03 12:00:57'}generating
+[2024-11-03T12:00:58.633+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.88, 'humidity': 50.77, 'timestamp': '2024-11-03 12:00:58'}
+[2024-11-03T12:00:59.653+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.88, 'humidity': 50.77, 'timestamp': '2024-11-03 12:00:58'}generating
+[2024-11-03T12:00:59.655+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.41, 'humidity': 50.23, 'timestamp': '2024-11-03 12:00:59'}
+[2024-11-03T12:01:00.671+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.41, 'humidity': 50.23, 'timestamp': '2024-11-03 12:00:59'}generating
+[2024-11-03T12:01:00.672+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.15, 'humidity': 50.21, 'timestamp': '2024-11-03 12:01:00'}
+[2024-11-03T12:01:01.691+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.15, 'humidity': 50.21, 'timestamp': '2024-11-03 12:01:00'}generating
+[2024-11-03T12:01:01.694+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.12, 'humidity': 50.75, 'timestamp': '2024-11-03 12:01:01'}
+[2024-11-03T12:01:02.715+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.12, 'humidity': 50.75, 'timestamp': '2024-11-03 12:01:01'}generating
+[2024-11-03T12:01:02.716+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.57, 'humidity': 50.46, 'timestamp': '2024-11-03 12:01:02'}
+[2024-11-03T12:01:03.731+0000] {logging_mixin.py:188} INFO - {'sensor_id': 4, 'temperature': 29.57, 'humidity': 50.46, 'timestamp': '2024-11-03 12:01:02'}generating
+[2024-11-03T12:01:03.732+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.48, 'humidity': 50.66, 'timestamp': '2024-11-03 12:01:03'}
+[2024-11-03T12:01:04.745+0000] {logging_mixin.py:188} INFO - {'sensor_id': 5, 'temperature': 29.48, 'humidity': 50.66, 'timestamp': '2024-11-03 12:01:03'}generating
+[2024-11-03T12:01:04.746+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.2, 'humidity': 50.61, 'timestamp': '2024-11-03 12:01:04'}
+[2024-11-03T12:01:05.776+0000] {logging_mixin.py:188} INFO - {'sensor_id': 1, 'temperature': 29.2, 'humidity': 50.61, 'timestamp': '2024-11-03 12:01:04'}generating
+[2024-11-03T12:01:05.777+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.52, 'humidity': 50.79, 'timestamp': '2024-11-03 12:01:05'}
+[2024-11-03T12:01:06.813+0000] {logging_mixin.py:188} INFO - {'sensor_id': 2, 'temperature': 29.52, 'humidity': 50.79, 'timestamp': '2024-11-03 12:01:05'}generating
+[2024-11-03T12:01:06.814+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.9, 'humidity': 50.48, 'timestamp': '2024-11-03 12:01:06'}
+[2024-11-03T12:01:07.836+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-03T12:01:07.839+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-03T12:01:07.840+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T12:01:07.865+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fetch_data, task_id=fetch_data_from_api, run_id=scheduled__2024-11-03T11:57:00+00:00, execution_date=20241103T115700, start_date=20241103T120005, end_date=20241103T120107
+[2024-11-03T12:01:07.910+0000] {logging_mixin.py:188} INFO - {'sensor_id': 3, 'temperature': 29.9, 'humidity': 50.48, 'timestamp': '2024-11-03 12:01:06'}
+[2024-11-03T12:01:07.945+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-11-03T12:01:07.990+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-03T12:01:07.997+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

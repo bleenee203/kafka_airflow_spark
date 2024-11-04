@@ -1,0 +1,46 @@
+[2024-11-03T06:34:24.696+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T06:34:25.160+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T06:34:03.786310+00:00 [queued]>
+[2024-11-03T06:34:25.353+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T06:34:03.786310+00:00 [queued]>
+[2024-11-03T06:34:25.354+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T06:34:25.412+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): sensor_data_consumer> on 2024-11-03 06:34:03.786310+00:00
+[2024-11-03T06:34:25.520+0000] {standard_task_runner.py:64} INFO - Started process 461 to run task
+[2024-11-03T06:34:25.531+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data_consumer', 'sensor_data_consumer', 'manual__2024-11-03T06:34:03.786310+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/***_consumer.py', '--cfg-path', '/tmp/tmpmqzniqbu']
+[2024-11-03T06:34:25.545+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask sensor_data_consumer
+[2024-11-03T06:34:25.960+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T06:34:03.786310+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T06:34:26.893+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='sensor_data_consumer' AIRFLOW_CTX_TASK_ID='sensor_data_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T06:34:03.786310+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-03T06:34:03.786310+00:00'
+[2024-11-03T06:34:26.898+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T06:34:27.038+0000] {spark_submit.py:222} INFO - Could not load connection string spark_default, defaulting to yarn
+[2024-11-03T06:34:27.039+0000] {spark_submit.py:344} INFO - Spark-Submit cmd: spark-submit --master yarn --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py
+[2024-11-03T06:35:07.673+0000] {spark_submit.py:495} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2024-11-03T06:35:07.679+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:650)
+[2024-11-03T06:35:07.679+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:281)
+[2024-11-03T06:35:07.692+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:237)
+[2024-11-03T06:35:07.692+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:122)
+[2024-11-03T06:35:07.697+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1094)
+[2024-11-03T06:35:07.697+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1094)
+[2024-11-03T06:35:07.697+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+[2024-11-03T06:35:07.698+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1111)
+[2024-11-03T06:35:07.698+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1120)
+[2024-11-03T06:35:07.698+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2024-11-03T06:35:07.945+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T06:35:08.064+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 426, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.
+[2024-11-03T06:35:08.112+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=sensor_data_consumer, task_id=sensor_data_consumer, run_id=manual__2024-11-03T06:34:03.786310+00:00, execution_date=20241103T063403, start_date=20241103T063425, end_date=20241103T063508
+[2024-11-03T06:35:08.543+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task sensor_data_consumer (Cannot execute: spark-submit --master yarn --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.; 461)
+[2024-11-03T06:35:08.728+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-11-03T06:35:09.402+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-03T06:35:09.643+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

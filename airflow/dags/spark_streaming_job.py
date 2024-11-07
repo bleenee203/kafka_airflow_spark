@@ -22,6 +22,7 @@ def spark_streaming_job():
         # StructField("timestamp", StringType(), False)
         StructField("crash_date", StringType(), True),
         StructField("crash_time", StringType(), True),
+        StructField("borough", StringType(), True),
         StructField("latitude", FloatType(), True),
         StructField("longitude", FloatType(), True),
         StructField("on_street_name", StringType(), True),
@@ -36,7 +37,6 @@ def spark_streaming_job():
         StructField("number_of_motorist_killed", IntegerType(), True),
         StructField("contributing_factor_vehicle_1", StringType(), True),
         StructField("contributing_factor_vehicle_2", StringType(), True),
-        StructField("collision_id", StringType(), True),
         StructField("vehicle_type_code1", StringType(), True),
         StructField("vehicle_type_code2", StringType(), True),
         StructField("vehicle_type_code3", StringType(), True),

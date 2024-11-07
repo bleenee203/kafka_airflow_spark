@@ -37,7 +37,6 @@ def spark_streaming_job():
         StructField("number_of_motorist_killed", IntegerType(), True),
         StructField("contributing_factor_vehicle_1", StringType(), True),
         StructField("contributing_factor_vehicle_2", StringType(), True),
-        StructField("collision_id", StringType(), True),
         StructField("vehicle_type_code1", StringType(), True),
         StructField("vehicle_type_code2", StringType(), True),
         StructField("vehicle_type_code3", StringType(), True),

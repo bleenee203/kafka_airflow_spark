@@ -1,0 +1,762 @@
+[2024-11-03T10:18:56.442+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T10:18:56.692+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T10:18:44.812760+00:00 [queued]>
+[2024-11-03T10:18:56.709+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T10:18:44.812760+00:00 [queued]>
+[2024-11-03T10:18:56.710+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T10:18:56.814+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): sensor_data_consumer> on 2024-11-03 10:18:44.812760+00:00
+[2024-11-03T10:18:56.827+0000] {standard_task_runner.py:64} INFO - Started process 5136 to run task
+[2024-11-03T10:18:56.834+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data_consumer', 'sensor_data_consumer', 'manual__2024-11-03T10:18:44.812760+00:00', '--job-id', '211', '--raw', '--subdir', 'DAGS_FOLDER/***_consumer.py', '--cfg-path', '/tmp/tmp3l2_1kpg']
+[2024-11-03T10:18:56.841+0000] {standard_task_runner.py:91} INFO - Job 211: Subtask sensor_data_consumer
+[2024-11-03T10:18:57.322+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-03T10:18:44.812760+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T10:18:58.138+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='sensor_data_consumer' AIRFLOW_CTX_TASK_ID='sensor_data_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T10:18:44.812760+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-03T10:18:44.812760+00:00'
+[2024-11-03T10:18:58.150+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T10:18:58.313+0000] {spark_submit.py:222} INFO - Could not load connection string spark_default, defaulting to yarn
+[2024-11-03T10:18:58.328+0000] {spark_submit.py:344} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop-3.2.1/etc/hadoop --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py
+[2024-11-03T10:19:17.975+0000] {spark_submit.py:495} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-11-03T10:19:19.323+0000] {spark_submit.py:495} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2024-11-03T10:19:19.323+0000] {spark_submit.py:495} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2024-11-03T10:19:19.420+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12 added as a dependency
+[2024-11-03T10:19:19.421+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-11-03T10:19:19.436+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client added as a dependency
+[2024-11-03T10:19:19.442+0000] {spark_submit.py:495} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-2c38226c-f655-4228-ba92-959774488d41;1.0
+[2024-11-03T10:19:19.468+0000] {spark_submit.py:495} INFO - confs: [default]
+[2024-11-03T10:19:21.795+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2 in central
+[2024-11-03T10:19:22.679+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.2 in central
+[2024-11-03T10:19:23.802+0000] {spark_submit.py:495} INFO - found org.apache.kafka#kafka-clients;3.3.2 in central
+[2024-11-03T10:19:24.465+0000] {spark_submit.py:495} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-11-03T10:19:25.208+0000] {spark_submit.py:495} INFO - found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2024-11-03T10:19:26.680+0000] {spark_submit.py:495} INFO - found org.slf4j#slf4j-api;2.0.6 in central
+[2024-11-03T10:19:28.096+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2024-11-03T10:19:29.250+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2024-11-03T10:19:30.048+0000] {spark_submit.py:495} INFO - found commons-logging#commons-logging;1.1.3 in central
+[2024-11-03T10:19:30.585+0000] {spark_submit.py:495} INFO - found com.google.code.findbugs#jsr305;3.0.0 in central
+[2024-11-03T10:19:30.962+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2 in central
+[2024-11-03T10:19:31.357+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-pool2;2.11.1 in central
+[2024-11-03T10:19:31.623+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client;3.2.1 in central
+[2024-11-03T10:19:32.000+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-common;3.2.1 in central
+[2024-11-03T10:19:32.395+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-annotations;3.2.1 in central
+[2024-11-03T10:19:32.553+0000] {spark_submit.py:495} INFO - found com.google.guava#guava;27.0-jre in central
+[2024-11-03T10:19:32.842+0000] {spark_submit.py:495} INFO - found com.google.guava#failureaccess;1.0 in central
+[2024-11-03T10:19:32.894+0000] {spark_submit.py:495} INFO - found com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava in central
+[2024-11-03T10:19:32.943+0000] {spark_submit.py:495} INFO - found org.checkerframework#checker-qual;2.5.2 in central
+[2024-11-03T10:19:33.157+0000] {spark_submit.py:495} INFO - found com.google.errorprone#error_prone_annotations;2.2.0 in central
+[2024-11-03T10:19:33.379+0000] {spark_submit.py:495} INFO - found com.google.j2objc#j2objc-annotations;1.1 in central
+[2024-11-03T10:19:33.522+0000] {spark_submit.py:495} INFO - found org.codehaus.mojo#animal-sniffer-annotations;1.17 in central
+[2024-11-03T10:19:33.770+0000] {spark_submit.py:495} INFO - found commons-cli#commons-cli;1.2 in central
+[2024-11-03T10:19:33.862+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-math3;3.1.1 in central
+[2024-11-03T10:19:34.020+0000] {spark_submit.py:495} INFO - found org.apache.httpcomponents#httpclient;4.5.6 in central
+[2024-11-03T10:19:34.114+0000] {spark_submit.py:495} INFO - found org.apache.httpcomponents#httpcore;4.4.10 in central
+[2024-11-03T10:19:34.204+0000] {spark_submit.py:495} INFO - found commons-codec#commons-codec;1.11 in central
+[2024-11-03T10:19:34.303+0000] {spark_submit.py:495} INFO - found commons-io#commons-io;2.5 in central
+[2024-11-03T10:19:34.458+0000] {spark_submit.py:495} INFO - found commons-net#commons-net;3.6 in central
+[2024-11-03T10:19:34.780+0000] {spark_submit.py:495} INFO - found commons-collections#commons-collections;3.2.2 in central
+[2024-11-03T10:19:34.928+0000] {spark_submit.py:495} INFO - found org.eclipse.jetty#jetty-servlet;9.3.24.v20180605 in central
+[2024-11-03T10:19:35.208+0000] {spark_submit.py:495} INFO - found org.eclipse.jetty#jetty-security;9.3.24.v20180605 in central
+[2024-11-03T10:19:35.621+0000] {spark_submit.py:495} INFO - found org.eclipse.jetty#jetty-webapp;9.3.24.v20180605 in central
+[2024-11-03T10:19:36.025+0000] {spark_submit.py:495} INFO - found org.eclipse.jetty#jetty-xml;9.3.24.v20180605 in central
+[2024-11-03T10:19:36.066+0000] {spark_submit.py:495} INFO - found com.sun.jersey#jersey-servlet;1.19 in central
+[2024-11-03T10:19:36.366+0000] {spark_submit.py:495} INFO - found log4j#log4j;1.2.17 in central
+[2024-11-03T10:19:36.369+0000] {spark_submit.py:495} INFO - found commons-beanutils#commons-beanutils;1.9.3 in central
+[2024-11-03T10:19:36.757+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-configuration2;2.1.1 in central
+[2024-11-03T10:19:36.830+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-lang3;3.7 in central
+[2024-11-03T10:19:36.910+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-text;1.4 in central
+[2024-11-03T10:19:37.370+0000] {spark_submit.py:495} INFO - found org.apache.avro#avro;1.7.7 in central
+[2024-11-03T10:19:37.609+0000] {spark_submit.py:495} INFO - found org.codehaus.jackson#jackson-core-asl;1.9.13 in central
+[2024-11-03T10:19:37.806+0000] {spark_submit.py:495} INFO - found org.codehaus.jackson#jackson-mapper-asl;1.9.13 in central
+[2024-11-03T10:19:37.860+0000] {spark_submit.py:495} INFO - found com.thoughtworks.paranamer#paranamer;2.3 in central
+[2024-11-03T10:19:38.155+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-compress;1.18 in central
+[2024-11-03T10:19:38.185+0000] {spark_submit.py:495} INFO - found com.google.re2j#re2j;1.1 in central
+[2024-11-03T10:19:38.224+0000] {spark_submit.py:495} INFO - found com.google.protobuf#protobuf-java;2.5.0 in central
+[2024-11-03T10:19:38.314+0000] {spark_submit.py:495} INFO - found com.google.code.gson#gson;2.2.4 in central
+[2024-11-03T10:19:38.448+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-auth;3.2.1 in central
+[2024-11-03T10:19:38.522+0000] {spark_submit.py:495} INFO - found com.nimbusds#nimbus-jose-jwt;4.41.1 in central
+[2024-11-03T10:19:38.635+0000] {spark_submit.py:495} INFO - found com.github.stephenc.jcip#jcip-annotations;1.0-1 in central
+[2024-11-03T10:19:38.851+0000] {spark_submit.py:495} INFO - found net.minidev#json-smart;2.3 in central
+[2024-11-03T10:19:39.135+0000] {spark_submit.py:495} INFO - found net.minidev#accessors-smart;1.2 in central
+[2024-11-03T10:19:39.350+0000] {spark_submit.py:495} INFO - found org.ow2.asm#asm;5.0.4 in central
+[2024-11-03T10:19:39.426+0000] {spark_submit.py:495} INFO - found org.apache.curator#curator-framework;2.13.0 in central
+[2024-11-03T10:19:39.524+0000] {spark_submit.py:495} INFO - found org.apache.curator#curator-client;2.13.0 in central
+[2024-11-03T10:19:39.808+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-simplekdc;1.0.1 in central
+[2024-11-03T10:19:39.838+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-client;1.0.1 in central
+[2024-11-03T10:19:39.898+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-config;1.0.1 in central
+[2024-11-03T10:19:39.925+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-core;1.0.1 in central
+[2024-11-03T10:19:40.125+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-pkix;1.0.1 in central
+[2024-11-03T10:19:40.303+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-asn1;1.0.1 in central
+[2024-11-03T10:19:40.340+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-util;1.0.1 in central
+[2024-11-03T10:19:40.484+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-common;1.0.1 in central
+[2024-11-03T10:19:40.834+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-crypto;1.0.1 in central
+[2024-11-03T10:19:40.917+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-util;1.0.1 in central
+[2024-11-03T10:19:40.918+0000] {spark_submit.py:495} INFO - found org.apache.kerby#token-provider;1.0.1 in central
+[2024-11-03T10:19:40.918+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-admin;1.0.1 in central
+[2024-11-03T10:19:40.931+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-server;1.0.1 in central
+[2024-11-03T10:19:40.931+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-identity;1.0.1 in central
+[2024-11-03T10:19:40.932+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-xdr;1.0.1 in central
+[2024-11-03T10:19:40.932+0000] {spark_submit.py:495} INFO - found org.apache.curator#curator-recipes;2.13.0 in central
+[2024-11-03T10:19:40.933+0000] {spark_submit.py:495} INFO - found org.apache.htrace#htrace-core4;4.1.0-incubating in central
+[2024-11-03T10:19:40.933+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.core#jackson-databind;2.9.8 in central
+[2024-11-03T10:19:41.215+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.core#jackson-annotations;2.9.8 in central
+[2024-11-03T10:19:41.340+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.core#jackson-core;2.9.8 in central
+[2024-11-03T10:19:41.358+0000] {spark_submit.py:495} INFO - found org.codehaus.woodstox#stax2-api;3.1.4 in central
+[2024-11-03T10:19:42.084+0000] {spark_submit.py:495} INFO - found com.fasterxml.woodstox#woodstox-core;5.0.3 in central
+[2024-11-03T10:19:42.120+0000] {spark_submit.py:495} INFO - found dnsjava#dnsjava;2.1.7 in central
+[2024-11-03T10:19:42.291+0000] {spark_submit.py:495} INFO - found javax.servlet.jsp#jsp-api;2.1 in central
+[2024-11-03T10:19:43.505+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-hdfs-client;3.2.1 in central
+[2024-11-03T10:19:43.785+0000] {spark_submit.py:495} INFO - found com.squareup.okhttp#okhttp;2.7.5 in central
+[2024-11-03T10:19:43.914+0000] {spark_submit.py:495} INFO - found com.squareup.okio#okio;1.6.0 in central
+[2024-11-03T10:19:44.483+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-yarn-api;3.2.1 in central
+[2024-11-03T10:19:44.520+0000] {spark_submit.py:495} INFO - found javax.xml.bind#jaxb-api;2.2.11 in central
+[2024-11-03T10:19:44.540+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-yarn-client;3.2.1 in central
+[2024-11-03T10:19:44.622+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-mapreduce-client-core;3.2.1 in central
+[2024-11-03T10:19:44.788+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-yarn-common;3.2.1 in central
+[2024-11-03T10:19:45.568+0000] {spark_submit.py:495} INFO - found javax.servlet#javax.servlet-api;3.1.0 in central
+[2024-11-03T10:19:46.368+0000] {spark_submit.py:495} INFO - found org.eclipse.jetty#jetty-util;9.3.24.v20180605 in central
+[2024-11-03T10:19:46.908+0000] {spark_submit.py:495} INFO - found com.sun.jersey#jersey-core;1.19 in central
+[2024-11-03T10:19:47.119+0000] {spark_submit.py:495} INFO - found javax.ws.rs#jsr311-api;1.1.1 in central
+[2024-11-03T10:19:47.447+0000] {spark_submit.py:495} INFO - found com.sun.jersey#jersey-client;1.19 in central
+[2024-11-03T10:19:48.290+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.module#jackson-module-jaxb-annotations;2.9.8 in central
+[2024-11-03T10:19:48.531+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.jaxrs#jackson-jaxrs-json-provider;2.9.8 in central
+[2024-11-03T10:19:48.614+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.jaxrs#jackson-jaxrs-base;2.9.8 in central
+[2024-11-03T10:19:48.646+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-mapreduce-client-jobclient;3.2.1 in central
+[2024-11-03T10:19:48.679+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-mapreduce-client-common;3.2.1 in central
+[2024-11-03T10:19:49.706+0000] {spark_submit.py:495} INFO - :: resolution report :: resolve 29523ms :: artifacts dl 315ms
+[2024-11-03T10:19:49.707+0000] {spark_submit.py:495} INFO - :: modules in use:
+[2024-11-03T10:19:49.707+0000] {spark_submit.py:495} INFO - com.fasterxml.jackson.core#jackson-annotations;2.9.8 from central in [default]
+[2024-11-03T10:19:49.707+0000] {spark_submit.py:495} INFO - com.fasterxml.jackson.core#jackson-core;2.9.8 from central in [default]
+[2024-11-03T10:19:49.707+0000] {spark_submit.py:495} INFO - com.fasterxml.jackson.core#jackson-databind;2.9.8 from central in [default]
+[2024-11-03T10:19:49.708+0000] {spark_submit.py:495} INFO - com.fasterxml.jackson.jaxrs#jackson-jaxrs-base;2.9.8 from central in [default]
+[2024-11-03T10:19:49.708+0000] {spark_submit.py:495} INFO - com.fasterxml.jackson.jaxrs#jackson-jaxrs-json-provider;2.9.8 from central in [default]
+[2024-11-03T10:19:49.708+0000] {spark_submit.py:495} INFO - com.fasterxml.jackson.module#jackson-module-jaxb-annotations;2.9.8 from central in [default]
+[2024-11-03T10:19:49.708+0000] {spark_submit.py:495} INFO - com.fasterxml.woodstox#woodstox-core;5.0.3 from central in [default]
+[2024-11-03T10:19:49.708+0000] {spark_submit.py:495} INFO - com.github.stephenc.jcip#jcip-annotations;1.0-1 from central in [default]
+[2024-11-03T10:19:49.708+0000] {spark_submit.py:495} INFO - com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2024-11-03T10:19:49.709+0000] {spark_submit.py:495} INFO - com.google.code.gson#gson;2.2.4 from central in [default]
+[2024-11-03T10:19:49.709+0000] {spark_submit.py:495} INFO - com.google.errorprone#error_prone_annotations;2.2.0 from central in [default]
+[2024-11-03T10:19:49.709+0000] {spark_submit.py:495} INFO - com.google.guava#failureaccess;1.0 from central in [default]
+[2024-11-03T10:19:49.709+0000] {spark_submit.py:495} INFO - com.google.guava#guava;27.0-jre from central in [default]
+[2024-11-03T10:19:49.709+0000] {spark_submit.py:495} INFO - com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava from central in [default]
+[2024-11-03T10:19:49.710+0000] {spark_submit.py:495} INFO - com.google.j2objc#j2objc-annotations;1.1 from central in [default]
+[2024-11-03T10:19:49.710+0000] {spark_submit.py:495} INFO - com.google.protobuf#protobuf-java;2.5.0 from central in [default]
+[2024-11-03T10:19:49.710+0000] {spark_submit.py:495} INFO - com.google.re2j#re2j;1.1 from central in [default]
+[2024-11-03T10:19:49.710+0000] {spark_submit.py:495} INFO - com.nimbusds#nimbus-jose-jwt;4.41.1 from central in [default]
+[2024-11-03T10:19:49.710+0000] {spark_submit.py:495} INFO - com.squareup.okhttp#okhttp;2.7.5 from central in [default]
+[2024-11-03T10:19:49.711+0000] {spark_submit.py:495} INFO - com.squareup.okio#okio;1.6.0 from central in [default]
+[2024-11-03T10:19:49.711+0000] {spark_submit.py:495} INFO - com.sun.jersey#jersey-client;1.19 from central in [default]
+[2024-11-03T10:19:49.711+0000] {spark_submit.py:495} INFO - com.sun.jersey#jersey-core;1.19 from central in [default]
+[2024-11-03T10:19:49.711+0000] {spark_submit.py:495} INFO - com.sun.jersey#jersey-servlet;1.19 from central in [default]
+[2024-11-03T10:19:49.711+0000] {spark_submit.py:495} INFO - com.thoughtworks.paranamer#paranamer;2.3 from central in [default]
+[2024-11-03T10:19:49.711+0000] {spark_submit.py:495} INFO - commons-beanutils#commons-beanutils;1.9.3 from central in [default]
+[2024-11-03T10:19:49.712+0000] {spark_submit.py:495} INFO - commons-cli#commons-cli;1.2 from central in [default]
+[2024-11-03T10:19:49.712+0000] {spark_submit.py:495} INFO - commons-codec#commons-codec;1.11 from central in [default]
+[2024-11-03T10:19:49.712+0000] {spark_submit.py:495} INFO - commons-collections#commons-collections;3.2.2 from central in [default]
+[2024-11-03T10:19:49.712+0000] {spark_submit.py:495} INFO - commons-io#commons-io;2.5 from central in [default]
+[2024-11-03T10:19:49.712+0000] {spark_submit.py:495} INFO - commons-logging#commons-logging;1.1.3 from central in [default]
+[2024-11-03T10:19:49.713+0000] {spark_submit.py:495} INFO - commons-net#commons-net;3.6 from central in [default]
+[2024-11-03T10:19:49.713+0000] {spark_submit.py:495} INFO - dnsjava#dnsjava;2.1.7 from central in [default]
+[2024-11-03T10:19:49.713+0000] {spark_submit.py:495} INFO - javax.servlet#javax.servlet-api;3.1.0 from central in [default]
+[2024-11-03T10:19:49.713+0000] {spark_submit.py:495} INFO - javax.servlet.jsp#jsp-api;2.1 from central in [default]
+[2024-11-03T10:19:49.714+0000] {spark_submit.py:495} INFO - javax.ws.rs#jsr311-api;1.1.1 from central in [default]
+[2024-11-03T10:19:49.714+0000] {spark_submit.py:495} INFO - javax.xml.bind#jaxb-api;2.2.11 from central in [default]
+[2024-11-03T10:19:49.714+0000] {spark_submit.py:495} INFO - log4j#log4j;1.2.17 from central in [default]
+[2024-11-03T10:19:49.714+0000] {spark_submit.py:495} INFO - net.minidev#accessors-smart;1.2 from central in [default]
+[2024-11-03T10:19:49.714+0000] {spark_submit.py:495} INFO - net.minidev#json-smart;2.3 from central in [default]
+[2024-11-03T10:19:49.715+0000] {spark_submit.py:495} INFO - org.apache.avro#avro;1.7.7 from central in [default]
+[2024-11-03T10:19:49.715+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-compress;1.18 from central in [default]
+[2024-11-03T10:19:49.715+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-configuration2;2.1.1 from central in [default]
+[2024-11-03T10:19:49.715+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-lang3;3.7 from central in [default]
+[2024-11-03T10:19:49.716+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-math3;3.1.1 from central in [default]
+[2024-11-03T10:19:49.716+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2024-11-03T10:19:49.716+0000] {spark_submit.py:495} INFO - org.apache.commons#commons-text;1.4 from central in [default]
+[2024-11-03T10:19:49.716+0000] {spark_submit.py:495} INFO - org.apache.curator#curator-client;2.13.0 from central in [default]
+[2024-11-03T10:19:49.717+0000] {spark_submit.py:495} INFO - org.apache.curator#curator-framework;2.13.0 from central in [default]
+[2024-11-03T10:19:49.717+0000] {spark_submit.py:495} INFO - org.apache.curator#curator-recipes;2.13.0 from central in [default]
+[2024-11-03T10:19:49.717+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-annotations;3.2.1 from central in [default]
+[2024-11-03T10:19:49.717+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-auth;3.2.1 from central in [default]
+[2024-11-03T10:19:49.718+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client;3.2.1 from central in [default]
+[2024-11-03T10:19:49.718+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2024-11-03T10:19:49.718+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2024-11-03T10:19:49.718+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-common;3.2.1 from central in [default]
+[2024-11-03T10:19:49.719+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-hdfs-client;3.2.1 from central in [default]
+[2024-11-03T10:19:49.719+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-mapreduce-client-common;3.2.1 from central in [default]
+[2024-11-03T10:19:49.719+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-mapreduce-client-core;3.2.1 from central in [default]
+[2024-11-03T10:19:49.719+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-mapreduce-client-jobclient;3.2.1 from central in [default]
+[2024-11-03T10:19:49.720+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-yarn-api;3.2.1 from central in [default]
+[2024-11-03T10:19:49.720+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-yarn-client;3.2.1 from central in [default]
+[2024-11-03T10:19:49.720+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-yarn-common;3.2.1 from central in [default]
+[2024-11-03T10:19:49.720+0000] {spark_submit.py:495} INFO - org.apache.htrace#htrace-core4;4.1.0-incubating from central in [default]
+[2024-11-03T10:19:49.721+0000] {spark_submit.py:495} INFO - org.apache.httpcomponents#httpclient;4.5.6 from central in [default]
+[2024-11-03T10:19:49.721+0000] {spark_submit.py:495} INFO - org.apache.httpcomponents#httpcore;4.4.10 from central in [default]
+[2024-11-03T10:19:49.721+0000] {spark_submit.py:495} INFO - org.apache.kafka#kafka-clients;3.3.2 from central in [default]
+[2024-11-03T10:19:49.721+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-admin;1.0.1 from central in [default]
+[2024-11-03T10:19:49.722+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-client;1.0.1 from central in [default]
+[2024-11-03T10:19:49.722+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-common;1.0.1 from central in [default]
+[2024-11-03T10:19:49.722+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-core;1.0.1 from central in [default]
+[2024-11-03T10:19:49.722+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-crypto;1.0.1 from central in [default]
+[2024-11-03T10:19:49.723+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-identity;1.0.1 from central in [default]
+[2024-11-03T10:19:49.723+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-server;1.0.1 from central in [default]
+[2024-11-03T10:19:49.723+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-simplekdc;1.0.1 from central in [default]
+[2024-11-03T10:19:49.723+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerb-util;1.0.1 from central in [default]
+[2024-11-03T10:19:49.724+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerby-asn1;1.0.1 from central in [default]
+[2024-11-03T10:19:49.724+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerby-config;1.0.1 from central in [default]
+[2024-11-03T10:19:49.724+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerby-pkix;1.0.1 from central in [default]
+[2024-11-03T10:19:49.724+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerby-util;1.0.1 from central in [default]
+[2024-11-03T10:19:49.725+0000] {spark_submit.py:495} INFO - org.apache.kerby#kerby-xdr;1.0.1 from central in [default]
+[2024-11-03T10:19:49.725+0000] {spark_submit.py:495} INFO - org.apache.kerby#token-provider;1.0.1 from central in [default]
+[2024-11-03T10:19:49.725+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2 from central in [default]
+[2024-11-03T10:19:49.725+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2 from central in [default]
+[2024-11-03T10:19:49.726+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.2 from central in [default]
+[2024-11-03T10:19:49.726+0000] {spark_submit.py:495} INFO - org.checkerframework#checker-qual;2.5.2 from central in [default]
+[2024-11-03T10:19:49.726+0000] {spark_submit.py:495} INFO - org.codehaus.jackson#jackson-core-asl;1.9.13 from central in [default]
+[2024-11-03T10:19:49.726+0000] {spark_submit.py:495} INFO - org.codehaus.jackson#jackson-mapper-asl;1.9.13 from central in [default]
+[2024-11-03T10:19:49.727+0000] {spark_submit.py:495} INFO - org.codehaus.mojo#animal-sniffer-annotations;1.17 from central in [default]
+[2024-11-03T10:19:49.727+0000] {spark_submit.py:495} INFO - org.codehaus.woodstox#stax2-api;3.1.4 from central in [default]
+[2024-11-03T10:19:49.727+0000] {spark_submit.py:495} INFO - org.eclipse.jetty#jetty-security;9.3.24.v20180605 from central in [default]
+[2024-11-03T10:19:49.727+0000] {spark_submit.py:495} INFO - org.eclipse.jetty#jetty-servlet;9.3.24.v20180605 from central in [default]
+[2024-11-03T10:19:49.728+0000] {spark_submit.py:495} INFO - org.eclipse.jetty#jetty-util;9.3.24.v20180605 from central in [default]
+[2024-11-03T10:19:49.728+0000] {spark_submit.py:495} INFO - org.eclipse.jetty#jetty-webapp;9.3.24.v20180605 from central in [default]
+[2024-11-03T10:19:49.728+0000] {spark_submit.py:495} INFO - org.eclipse.jetty#jetty-xml;9.3.24.v20180605 from central in [default]
+[2024-11-03T10:19:49.728+0000] {spark_submit.py:495} INFO - org.lz4#lz4-java;1.8.0 from central in [default]
+[2024-11-03T10:19:49.729+0000] {spark_submit.py:495} INFO - org.ow2.asm#asm;5.0.4 from central in [default]
+[2024-11-03T10:19:49.729+0000] {spark_submit.py:495} INFO - org.slf4j#slf4j-api;2.0.6 from central in [default]
+[2024-11-03T10:19:49.729+0000] {spark_submit.py:495} INFO - org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2024-11-03T10:19:49.729+0000] {spark_submit.py:495} INFO - :: evicted modules:
+[2024-11-03T10:19:49.730+0000] {spark_submit.py:495} INFO - org.slf4j#slf4j-api;1.7.25 by [org.slf4j#slf4j-api;2.0.6] in [default]
+[2024-11-03T10:19:49.730+0000] {spark_submit.py:495} INFO - org.xerial.snappy#snappy-java;1.0.5 by [org.xerial.snappy#snappy-java;1.1.10.3] in [default]
+[2024-11-03T10:19:49.730+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-03T10:19:49.730+0000] {spark_submit.py:495} INFO - |                  |            modules            ||   artifacts   |
+[2024-11-03T10:19:49.730+0000] {spark_submit.py:495} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2024-11-03T10:19:49.731+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-03T10:19:49.731+0000] {spark_submit.py:495} INFO - |      default     |  100  |   0   |   0   |   2   ||   98  |   0   |
+[2024-11-03T10:19:49.731+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-03T10:19:49.732+0000] {spark_submit.py:495} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-2c38226c-f655-4228-ba92-959774488d41
+[2024-11-03T10:19:49.732+0000] {spark_submit.py:495} INFO - confs: [default]
+[2024-11-03T10:19:49.732+0000] {spark_submit.py:495} INFO - 0 artifacts copied, 98 already retrieved (0kB/94ms)
+[2024-11-03T10:19:51.081+0000] {spark_submit.py:495} INFO - 24/11/03 10:19:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-11-03T10:20:04.722+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:04 INFO SparkContext: Running Spark version 3.4.2
+[2024-11-03T10:20:04.871+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:04 INFO ResourceUtils: ==============================================================
+[2024-11-03T10:20:04.907+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:04 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-11-03T10:20:04.944+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:04 INFO ResourceUtils: ==============================================================
+[2024-11-03T10:20:04.950+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:04 INFO SparkContext: Submitted application: KafkaSparkStreaming
+[2024-11-03T10:20:05.209+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:05 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-11-03T10:20:05.327+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:05 INFO ResourceProfile: Limiting resource is cpu
+[2024-11-03T10:20:05.347+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:05 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-11-03T10:20:05.987+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:05 INFO SecurityManager: Changing view acls to: ***
+[2024-11-03T10:20:06.009+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:05 INFO SecurityManager: Changing modify acls to: ***
+[2024-11-03T10:20:06.010+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:05 INFO SecurityManager: Changing view acls groups to:
+[2024-11-03T10:20:06.010+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:06 INFO SecurityManager: Changing modify acls groups to:
+[2024-11-03T10:20:06.028+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-11-03T10:20:07.131+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:07 INFO Utils: Successfully started service 'sparkDriver' on port 36115.
+[2024-11-03T10:20:07.479+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:07 INFO SparkEnv: Registering MapOutputTracker
+[2024-11-03T10:20:07.738+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:07 INFO SparkEnv: Registering BlockManagerMaster
+[2024-11-03T10:20:07.872+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:07 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-11-03T10:20:07.907+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:07 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-11-03T10:20:07.943+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:07 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-11-03T10:20:08.108+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:08 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-52bdfe0a-711c-4e4a-beba-e04797e50acc
+[2024-11-03T10:20:08.297+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:08 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-11-03T10:20:08.484+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:08 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-11-03T10:20:09.122+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:09 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-11-03T10:20:09.593+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:09 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-11-03T10:20:10.208+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:10 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-11-03T10:20:10.640+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:10 INFO TransportClientFactory: Successfully created connection to spark-master/172.20.0.5:7077 after 238 ms (0 ms spent in bootstraps)
+[2024-11-03T10:20:11.734+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:11 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20241103102011-0009
+[2024-11-03T10:20:11.800+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:11 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36085.
+[2024-11-03T10:20:11.859+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:11 INFO NettyBlockTransferService: Server created on 7d9160448bdc:36085
+[2024-11-03T10:20:11.893+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:11 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-11-03T10:20:12.061+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:11 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 7d9160448bdc, 36085, None)
+[2024-11-03T10:20:12.064+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:12 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241103102011-0009/0 on worker-20241103082644-172.20.0.6-37323 (172.20.0.6:37323) with 1 core(s)
+[2024-11-03T10:20:12.115+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:12 INFO StandaloneSchedulerBackend: Granted executor ID app-20241103102011-0009/0 on hostPort 172.20.0.6:37323 with 1 core(s), 1024.0 MiB RAM
+[2024-11-03T10:20:12.191+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:12 INFO BlockManagerMasterEndpoint: Registering block manager 7d9160448bdc:36085 with 434.4 MiB RAM, BlockManagerId(driver, 7d9160448bdc, 36085, None)
+[2024-11-03T10:20:12.209+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:12 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 7d9160448bdc, 36085, None)
+[2024-11-03T10:20:12.309+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:12 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 7d9160448bdc, 36085, None)
+[2024-11-03T10:20:12.849+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:12 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241103102011-0009/0 is now RUNNING
+[2024-11-03T10:20:14.403+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:14 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-11-03T10:20:26.506+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:26 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-11-03T10:20:26.570+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:26 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2024-11-03T10:20:37.575+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:37 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.20.0.6:46228) with ID 0,  ResourceProfileId 0
+[2024-11-03T10:20:38.025+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:37 INFO BlockManagerMasterEndpoint: Registering block manager 172.20.0.6:39701 with 434.4 MiB RAM, BlockManagerId(0, 172.20.0.6, 39701, None)
+[2024-11-03T10:20:48.269+0000] {spark_submit.py:495} INFO - done
+[2024-11-03T10:20:50.654+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:50 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+[2024-11-03T10:20:50.948+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:50 INFO ResolveWriteToStream: Checkpoint root hdfs://namenode:9000/spark_checkpoint resolved to hdfs://namenode:9000/spark_checkpoint.
+[2024-11-03T10:20:50.963+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:50 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2024-11-03T10:20:51.741+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:51 INFO CheckpointFileManager: Writing atomically to hdfs://namenode:9000/spark_checkpoint/metadata using temp file hdfs://namenode:9000/spark_checkpoint/.metadata.f09a7044-87c2-4533-bd7f-0db2b0a3421d.tmp
+[2024-11-03T10:20:53.019+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:53 INFO CheckpointFileManager: Renamed temp file hdfs://namenode:9000/spark_checkpoint/.metadata.f09a7044-87c2-4533-bd7f-0db2b0a3421d.tmp to hdfs://namenode:9000/spark_checkpoint/metadata
+[2024-11-03T10:20:53.341+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:53 INFO MicroBatchExecution: Starting [id = cb9c0f90-a8b1-41c2-889e-c10845e7c13d, runId = 26db3f6c-9ea2-4a65-9d6e-badd777b2b83]. Use hdfs://namenode:9000/spark_checkpoint to store the query checkpoint.
+[2024-11-03T10:20:53.578+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:53 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@7543ad14] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@33f12ae8]
+[2024-11-03T10:20:54.110+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:54 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-11-03T10:20:54.111+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:54 INFO OffsetSeqLog: BatchIds found from listing:
+[2024-11-03T10:20:54.112+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:54 INFO MicroBatchExecution: Starting new streaming query.
+[2024-11-03T10:20:54.112+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:54 INFO MicroBatchExecution: Stream started from {}
+[2024-11-03T10:20:56.400+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:56 INFO AdminClientConfig: AdminClientConfig values:
+[2024-11-03T10:20:56.406+0000] {spark_submit.py:495} INFO - bootstrap.servers = [10.0.2.15:9092]
+[2024-11-03T10:20:56.408+0000] {spark_submit.py:495} INFO - client.dns.lookup = use_all_dns_ips
+[2024-11-03T10:20:56.415+0000] {spark_submit.py:495} INFO - client.id =
+[2024-11-03T10:20:56.415+0000] {spark_submit.py:495} INFO - connections.max.idle.ms = 300000
+[2024-11-03T10:20:56.422+0000] {spark_submit.py:495} INFO - default.api.timeout.ms = 60000
+[2024-11-03T10:20:56.424+0000] {spark_submit.py:495} INFO - metadata.max.age.ms = 300000
+[2024-11-03T10:20:56.425+0000] {spark_submit.py:495} INFO - metric.reporters = []
+[2024-11-03T10:20:56.428+0000] {spark_submit.py:495} INFO - metrics.num.samples = 2
+[2024-11-03T10:20:56.429+0000] {spark_submit.py:495} INFO - metrics.recording.level = INFO
+[2024-11-03T10:20:56.430+0000] {spark_submit.py:495} INFO - metrics.sample.window.ms = 30000
+[2024-11-03T10:20:56.435+0000] {spark_submit.py:495} INFO - receive.buffer.bytes = 65536
+[2024-11-03T10:20:56.445+0000] {spark_submit.py:495} INFO - reconnect.backoff.max.ms = 1000
+[2024-11-03T10:20:56.447+0000] {spark_submit.py:495} INFO - reconnect.backoff.ms = 50
+[2024-11-03T10:20:56.453+0000] {spark_submit.py:495} INFO - request.timeout.ms = 30000
+[2024-11-03T10:20:56.463+0000] {spark_submit.py:495} INFO - retries = 2147483647
+[2024-11-03T10:20:56.470+0000] {spark_submit.py:495} INFO - retry.backoff.ms = 100
+[2024-11-03T10:20:56.470+0000] {spark_submit.py:495} INFO - sasl.client.callback.handler.class = null
+[2024-11-03T10:20:56.474+0000] {spark_submit.py:495} INFO - sasl.jaas.config = null
+[2024-11-03T10:20:56.475+0000] {spark_submit.py:495} INFO - sasl.kerberos.kinit.cmd = /usr/bin/kinit
+[2024-11-03T10:20:56.488+0000] {spark_submit.py:495} INFO - sasl.kerberos.min.time.before.relogin = 60000
+[2024-11-03T10:20:56.491+0000] {spark_submit.py:495} INFO - sasl.kerberos.service.name = null
+[2024-11-03T10:20:56.496+0000] {spark_submit.py:495} INFO - sasl.kerberos.ticket.renew.jitter = 0.05
+[2024-11-03T10:20:56.496+0000] {spark_submit.py:495} INFO - sasl.kerberos.ticket.renew.window.factor = 0.8
+[2024-11-03T10:20:56.496+0000] {spark_submit.py:495} INFO - sasl.login.callback.handler.class = null
+[2024-11-03T10:20:56.497+0000] {spark_submit.py:495} INFO - sasl.login.class = null
+[2024-11-03T10:20:56.497+0000] {spark_submit.py:495} INFO - sasl.login.connect.timeout.ms = null
+[2024-11-03T10:20:56.497+0000] {spark_submit.py:495} INFO - sasl.login.read.timeout.ms = null
+[2024-11-03T10:20:56.497+0000] {spark_submit.py:495} INFO - sasl.login.refresh.buffer.seconds = 300
+[2024-11-03T10:20:56.498+0000] {spark_submit.py:495} INFO - sasl.login.refresh.min.period.seconds = 60
+[2024-11-03T10:20:56.498+0000] {spark_submit.py:495} INFO - sasl.login.refresh.window.factor = 0.8
+[2024-11-03T10:20:56.498+0000] {spark_submit.py:495} INFO - sasl.login.refresh.window.jitter = 0.05
+[2024-11-03T10:20:56.498+0000] {spark_submit.py:495} INFO - sasl.login.retry.backoff.max.ms = 10000
+[2024-11-03T10:20:56.499+0000] {spark_submit.py:495} INFO - sasl.login.retry.backoff.ms = 100
+[2024-11-03T10:20:56.499+0000] {spark_submit.py:495} INFO - sasl.mechanism = GSSAPI
+[2024-11-03T10:20:56.499+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.clock.skew.seconds = 30
+[2024-11-03T10:20:56.499+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.expected.audience = null
+[2024-11-03T10:20:56.500+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.expected.issuer = null
+[2024-11-03T10:20:56.500+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+[2024-11-03T10:20:56.500+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+[2024-11-03T10:20:56.501+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+[2024-11-03T10:20:56.501+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.jwks.endpoint.url = null
+[2024-11-03T10:20:56.501+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.scope.claim.name = scope
+[2024-11-03T10:20:56.501+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.sub.claim.name = sub
+[2024-11-03T10:20:56.502+0000] {spark_submit.py:495} INFO - sasl.oauthbearer.token.endpoint.url = null
+[2024-11-03T10:20:56.502+0000] {spark_submit.py:495} INFO - security.protocol = PLAINTEXT
+[2024-11-03T10:20:56.516+0000] {spark_submit.py:495} INFO - security.providers = null
+[2024-11-03T10:20:56.517+0000] {spark_submit.py:495} INFO - send.buffer.bytes = 131072
+[2024-11-03T10:20:56.517+0000] {spark_submit.py:495} INFO - socket.connection.setup.timeout.max.ms = 30000
+[2024-11-03T10:20:56.518+0000] {spark_submit.py:495} INFO - socket.connection.setup.timeout.ms = 10000
+[2024-11-03T10:20:56.518+0000] {spark_submit.py:495} INFO - ssl.cipher.suites = null
+[2024-11-03T10:20:56.518+0000] {spark_submit.py:495} INFO - ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+[2024-11-03T10:20:56.519+0000] {spark_submit.py:495} INFO - ssl.endpoint.identification.algorithm = https
+[2024-11-03T10:20:56.519+0000] {spark_submit.py:495} INFO - ssl.engine.factory.class = null
+[2024-11-03T10:20:56.520+0000] {spark_submit.py:495} INFO - ssl.key.password = null
+[2024-11-03T10:20:56.520+0000] {spark_submit.py:495} INFO - ssl.keymanager.algorithm = SunX509
+[2024-11-03T10:20:56.520+0000] {spark_submit.py:495} INFO - ssl.keystore.certificate.chain = null
+[2024-11-03T10:20:56.521+0000] {spark_submit.py:495} INFO - ssl.keystore.key = null
+[2024-11-03T10:20:56.521+0000] {spark_submit.py:495} INFO - ssl.keystore.location = null
+[2024-11-03T10:20:56.522+0000] {spark_submit.py:495} INFO - ssl.keystore.password = null
+[2024-11-03T10:20:56.522+0000] {spark_submit.py:495} INFO - ssl.keystore.type = JKS
+[2024-11-03T10:20:56.522+0000] {spark_submit.py:495} INFO - ssl.protocol = TLSv1.3
+[2024-11-03T10:20:56.523+0000] {spark_submit.py:495} INFO - ssl.provider = null
+[2024-11-03T10:20:56.523+0000] {spark_submit.py:495} INFO - ssl.secure.random.implementation = null
+[2024-11-03T10:20:56.524+0000] {spark_submit.py:495} INFO - ssl.trustmanager.algorithm = PKIX
+[2024-11-03T10:20:56.524+0000] {spark_submit.py:495} INFO - ssl.truststore.certificates = null
+[2024-11-03T10:20:56.525+0000] {spark_submit.py:495} INFO - ssl.truststore.location = null
+[2024-11-03T10:20:56.525+0000] {spark_submit.py:495} INFO - ssl.truststore.password = null
+[2024-11-03T10:20:56.525+0000] {spark_submit.py:495} INFO - ssl.truststore.type = JKS
+[2024-11-03T10:20:56.526+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T10:20:57.684+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:57 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+[2024-11-03T10:20:57.868+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:57 INFO AppInfoParser: Kafka version: 3.3.2
+[2024-11-03T10:20:57.884+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:57 INFO AppInfoParser: Kafka commitId: b66af662e61082cb
+[2024-11-03T10:20:57.885+0000] {spark_submit.py:495} INFO - 24/11/03 10:20:57 INFO AppInfoParser: Kafka startTimeMs: 1730629257682
+[2024-11-03T10:21:01.514+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:01 INFO CheckpointFileManager: Writing atomically to hdfs://namenode:9000/spark_checkpoint/sources/0/0 using temp file hdfs://namenode:9000/spark_checkpoint/sources/0/.0.fd72097b-b635-4c29-bb85-ea40cbc0eeac.tmp
+[2024-11-03T10:21:02.130+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:02 INFO CheckpointFileManager: Renamed temp file hdfs://namenode:9000/spark_checkpoint/sources/0/.0.fd72097b-b635-4c29-bb85-ea40cbc0eeac.tmp to hdfs://namenode:9000/spark_checkpoint/sources/0/0
+[2024-11-03T10:21:02.133+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:02 INFO KafkaMicroBatchStream: Initial offsets: {"raw_data":{"0":1853}}
+[2024-11-03T10:21:02.675+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:02 INFO CheckpointFileManager: Writing atomically to hdfs://namenode:9000/spark_checkpoint/offsets/0 using temp file hdfs://namenode:9000/spark_checkpoint/offsets/.0.9817b0ec-7f6f-4593-8e38-9edc0d515b6f.tmp
+[2024-11-03T10:21:03.625+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:03 INFO CheckpointFileManager: Renamed temp file hdfs://namenode:9000/spark_checkpoint/offsets/.0.9817b0ec-7f6f-4593-8e38-9edc0d515b6f.tmp to hdfs://namenode:9000/spark_checkpoint/offsets/0
+[2024-11-03T10:21:03.627+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:03 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1730629262367,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+[2024-11-03T10:21:09.719+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:09 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-11-03T10:21:10.363+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:10 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-11-03T10:21:10.955+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:10 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-11-03T10:21:11.070+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:11 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+[2024-11-03T10:21:11.696+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:11 INFO FileStreamSinkLog: BatchIds found from listing:
+[2024-11-03T10:21:12.419+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:12 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-11-03T10:21:18.695+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:18 INFO CodeGenerator: Code generated in 2853.859425 ms
+[2024-11-03T10:21:20.851+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:20 INFO SparkContext: Starting job: start at NativeMethodAccessorImpl.java:0
+[2024-11-03T10:21:20.940+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:20 INFO DAGScheduler: Got job 0 (start at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-11-03T10:21:21.069+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:20 INFO DAGScheduler: Final stage: ResultStage 0 (start at NativeMethodAccessorImpl.java:0)
+[2024-11-03T10:21:21.153+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:21 INFO DAGScheduler: Parents of final stage: List()
+[2024-11-03T10:21:21.154+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:21 INFO DAGScheduler: Missing parents: List()
+[2024-11-03T10:21:21.299+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:21 INFO DAGScheduler: Submitting ResultStage 0 (ParallelCollectionRDD[4] at start at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-11-03T10:21:23.278+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:23 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 262.6 KiB, free 434.1 MiB)
+[2024-11-03T10:21:23.887+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:23 ERROR TorrentBroadcast: Store broadcast broadcast_0 fail, remove all pieces of the broadcast
+[2024-11-03T10:21:23.980+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:23 INFO TaskSchedulerImpl: Cancelling stage 0
+[2024-11-03T10:21:23.984+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:23 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage cancelled
+[2024-11-03T10:21:24.009+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO DAGScheduler: ResultStage 0 (start at NativeMethodAccessorImpl.java:0) failed in 1.888 s due to Job aborted due to stage failure: Task serialization failed: org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.010+0000] {spark_submit.py:495} INFO - org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.020+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:185)
+[2024-11-03T10:21:24.020+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.020+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.Utils$.withContextClassLoader(Utils.scala:240)
+[2024-11-03T10:21:24.021+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.newKryo(KryoSerializer.scala:173)
+[2024-11-03T10:21:24.021+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$$anon$1.create(KryoSerializer.scala:104)
+[2024-11-03T10:21:24.021+0000] {spark_submit.py:495} INFO - at com.esotericsoftware.kryo.pool.KryoPoolQueueImpl.borrow(KryoPoolQueueImpl.java:48)
+[2024-11-03T10:21:24.048+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$PoolWrapper.borrow(KryoSerializer.scala:111)
+[2024-11-03T10:21:24.049+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.borrowKryo(KryoSerializer.scala:351)
+[2024-11-03T10:21:24.053+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializationStream.<init>(KryoSerializer.scala:271)
+[2024-11-03T10:21:24.054+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.serializeStream(KryoSerializer.scala:437)
+[2024-11-03T10:21:24.054+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast$.blockifyObject(TorrentBroadcast.scala:356)
+[2024-11-03T10:21:24.054+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.writeBlocks(TorrentBroadcast.scala:160)
+[2024-11-03T10:21:24.054+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.<init>(TorrentBroadcast.scala:99)
+[2024-11-03T10:21:24.055+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcastFactory.newBroadcast(TorrentBroadcastFactory.scala:38)
+[2024-11-03T10:21:24.055+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.BroadcastManager.newBroadcast(BroadcastManager.scala:78)
+[2024-11-03T10:21:24.055+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcastInternal(SparkContext.scala:1548)
+[2024-11-03T10:21:24.055+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1530)
+[2024-11-03T10:21:24.055+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1535)
+[2024-11-03T10:21:24.055+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.056+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.056+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.056+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.056+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.056+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.056+0000] {spark_submit.py:495} INFO - Caused by: java.lang.NoSuchMethodException: org.apache.spark.sql.execution.datasources.v2.DataSourceRDDPartition.<init>()
+[2024-11-03T10:21:24.057+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+[2024-11-03T10:21:24.085+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor(Class.java:2271)
+[2024-11-03T10:21:24.085+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$7(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.085+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2024-11-03T10:21:24.085+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.086+0000] {spark_submit.py:495} INFO - ... 23 more
+[2024-11-03T10:21:24.087+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T10:21:24.087+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO DAGScheduler: Job 0 failed: start at NativeMethodAccessorImpl.java:0, took 3.223475 s
+[2024-11-03T10:21:24.113+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 ERROR FileFormatWriter: Aborting job 0dc1e92c-69df-497d-9b81-24a045b081c5.
+[2024-11-03T10:21:24.133+0000] {spark_submit.py:495} INFO - org.apache.spark.SparkException: Job aborted due to stage failure: Task serialization failed: org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.135+0000] {spark_submit.py:495} INFO - org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.149+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:185)
+[2024-11-03T10:21:24.150+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.151+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.Utils$.withContextClassLoader(Utils.scala:240)
+[2024-11-03T10:21:24.151+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.newKryo(KryoSerializer.scala:173)
+[2024-11-03T10:21:24.152+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$$anon$1.create(KryoSerializer.scala:104)
+[2024-11-03T10:21:24.153+0000] {spark_submit.py:495} INFO - at com.esotericsoftware.kryo.pool.KryoPoolQueueImpl.borrow(KryoPoolQueueImpl.java:48)
+[2024-11-03T10:21:24.159+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$PoolWrapper.borrow(KryoSerializer.scala:111)
+[2024-11-03T10:21:24.163+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.borrowKryo(KryoSerializer.scala:351)
+[2024-11-03T10:21:24.164+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializationStream.<init>(KryoSerializer.scala:271)
+[2024-11-03T10:21:24.164+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.serializeStream(KryoSerializer.scala:437)
+[2024-11-03T10:21:24.164+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast$.blockifyObject(TorrentBroadcast.scala:356)
+[2024-11-03T10:21:24.164+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.writeBlocks(TorrentBroadcast.scala:160)
+[2024-11-03T10:21:24.165+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.<init>(TorrentBroadcast.scala:99)
+[2024-11-03T10:21:24.165+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcastFactory.newBroadcast(TorrentBroadcastFactory.scala:38)
+[2024-11-03T10:21:24.165+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.BroadcastManager.newBroadcast(BroadcastManager.scala:78)
+[2024-11-03T10:21:24.165+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcastInternal(SparkContext.scala:1548)
+[2024-11-03T10:21:24.165+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1530)
+[2024-11-03T10:21:24.171+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1535)
+[2024-11-03T10:21:24.172+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.172+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.172+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.172+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.172+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.172+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.173+0000] {spark_submit.py:495} INFO - Caused by: java.lang.NoSuchMethodException: org.apache.spark.sql.execution.datasources.v2.DataSourceRDDPartition.<init>()
+[2024-11-03T10:21:24.173+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+[2024-11-03T10:21:24.173+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor(Class.java:2271)
+[2024-11-03T10:21:24.173+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$7(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.173+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2024-11-03T10:21:24.174+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.174+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.174+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.174+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2024-11-03T10:21:24.174+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2024-11-03T10:21:24.175+0000] {spark_submit.py:495} INFO - at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2024-11-03T10:21:24.184+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.185+0000] {spark_submit.py:495} INFO - ... 23 more
+[2024-11-03T10:21:24.185+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T10:21:24.186+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2785)
+[2024-11-03T10:21:24.186+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2721)
+[2024-11-03T10:21:24.186+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2720)
+[2024-11-03T10:21:24.187+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.187+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.188+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.188+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2720)
+[2024-11-03T10:21:24.188+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1545)
+[2024-11-03T10:21:24.189+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.189+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.190+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.190+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.221+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.224+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.225+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:971)
+[2024-11-03T10:21:24.225+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2263)
+[2024-11-03T10:21:24.226+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeWrite$1(FileFormatWriter.scala:241)
+[2024-11-03T10:21:24.226+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:271)
+[2024-11-03T10:21:24.226+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:212)
+[2024-11-03T10:21:24.227+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:193)
+[2024-11-03T10:21:24.227+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.FileStreamSink.addBatch(FileStreamSink.scala:171)
+[2024-11-03T10:21:24.227+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:729)
+[2024-11-03T10:21:24.228+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+[2024-11-03T10:21:24.288+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+[2024-11-03T10:21:24.288+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+[2024-11-03T10:21:24.289+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2024-11-03T10:21:24.289+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+[2024-11-03T10:21:24.289+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:726)
+[2024-11-03T10:21:24.289+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)
+[2024-11-03T10:21:24.306+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)
+[2024-11-03T10:21:24.307+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+[2024-11-03T10:21:24.310+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:726)
+[2024-11-03T10:21:24.318+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:284)
+[2024-11-03T10:21:24.341+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.341+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)
+[2024-11-03T10:21:24.342+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)
+[2024-11-03T10:21:24.342+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+[2024-11-03T10:21:24.342+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:247)
+[2024-11-03T10:21:24.342+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+[2024-11-03T10:21:24.342+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:237)
+[2024-11-03T10:21:24.343+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:306)
+[2024-11-03T10:21:24.343+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.343+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2024-11-03T10:21:24.343+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:284)
+[2024-11-03T10:21:24.343+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:207)
+[2024-11-03T10:21:24.344+0000] {spark_submit.py:495} INFO - Caused by: org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.344+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:185)
+[2024-11-03T10:21:24.344+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.344+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.Utils$.withContextClassLoader(Utils.scala:240)
+[2024-11-03T10:21:24.344+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.newKryo(KryoSerializer.scala:173)
+[2024-11-03T10:21:24.345+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$$anon$1.create(KryoSerializer.scala:104)
+[2024-11-03T10:21:24.345+0000] {spark_submit.py:495} INFO - at com.esotericsoftware.kryo.pool.KryoPoolQueueImpl.borrow(KryoPoolQueueImpl.java:48)
+[2024-11-03T10:21:24.345+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$PoolWrapper.borrow(KryoSerializer.scala:111)
+[2024-11-03T10:21:24.345+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.borrowKryo(KryoSerializer.scala:351)
+[2024-11-03T10:21:24.345+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializationStream.<init>(KryoSerializer.scala:271)
+[2024-11-03T10:21:24.346+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.serializeStream(KryoSerializer.scala:437)
+[2024-11-03T10:21:24.346+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast$.blockifyObject(TorrentBroadcast.scala:356)
+[2024-11-03T10:21:24.346+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.writeBlocks(TorrentBroadcast.scala:160)
+[2024-11-03T10:21:24.346+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.<init>(TorrentBroadcast.scala:99)
+[2024-11-03T10:21:24.346+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcastFactory.newBroadcast(TorrentBroadcastFactory.scala:38)
+[2024-11-03T10:21:24.347+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.BroadcastManager.newBroadcast(BroadcastManager.scala:78)
+[2024-11-03T10:21:24.347+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcastInternal(SparkContext.scala:1548)
+[2024-11-03T10:21:24.347+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1530)
+[2024-11-03T10:21:24.347+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1535)
+[2024-11-03T10:21:24.347+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.347+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.348+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.348+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.349+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.350+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.350+0000] {spark_submit.py:495} INFO - Caused by: java.lang.NoSuchMethodException: org.apache.spark.sql.execution.datasources.v2.DataSourceRDDPartition.<init>()
+[2024-11-03T10:21:24.350+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+[2024-11-03T10:21:24.350+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor(Class.java:2271)
+[2024-11-03T10:21:24.351+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$7(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.351+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2024-11-03T10:21:24.351+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.351+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.351+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.352+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2024-11-03T10:21:24.352+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2024-11-03T10:21:24.352+0000] {spark_submit.py:495} INFO - at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2024-11-03T10:21:24.352+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.352+0000] {spark_submit.py:495} INFO - ... 23 more
+[2024-11-03T10:21:24.501+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 ERROR MicroBatchExecution: Query [id = cb9c0f90-a8b1-41c2-889e-c10845e7c13d, runId = 26db3f6c-9ea2-4a65-9d6e-badd777b2b83] terminated with error
+[2024-11-03T10:21:24.502+0000] {spark_submit.py:495} INFO - org.apache.spark.SparkException: Job aborted due to stage failure: Task serialization failed: org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.504+0000] {spark_submit.py:495} INFO - org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.504+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:185)
+[2024-11-03T10:21:24.504+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.504+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.Utils$.withContextClassLoader(Utils.scala:240)
+[2024-11-03T10:21:24.504+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.newKryo(KryoSerializer.scala:173)
+[2024-11-03T10:21:24.505+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$$anon$1.create(KryoSerializer.scala:104)
+[2024-11-03T10:21:24.505+0000] {spark_submit.py:495} INFO - at com.esotericsoftware.kryo.pool.KryoPoolQueueImpl.borrow(KryoPoolQueueImpl.java:48)
+[2024-11-03T10:21:24.505+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$PoolWrapper.borrow(KryoSerializer.scala:111)
+[2024-11-03T10:21:24.505+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.borrowKryo(KryoSerializer.scala:351)
+[2024-11-03T10:21:24.505+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializationStream.<init>(KryoSerializer.scala:271)
+[2024-11-03T10:21:24.505+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.serializeStream(KryoSerializer.scala:437)
+[2024-11-03T10:21:24.506+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast$.blockifyObject(TorrentBroadcast.scala:356)
+[2024-11-03T10:21:24.506+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.writeBlocks(TorrentBroadcast.scala:160)
+[2024-11-03T10:21:24.506+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.<init>(TorrentBroadcast.scala:99)
+[2024-11-03T10:21:24.506+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcastFactory.newBroadcast(TorrentBroadcastFactory.scala:38)
+[2024-11-03T10:21:24.506+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.BroadcastManager.newBroadcast(BroadcastManager.scala:78)
+[2024-11-03T10:21:24.506+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcastInternal(SparkContext.scala:1548)
+[2024-11-03T10:21:24.556+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1530)
+[2024-11-03T10:21:24.556+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1535)
+[2024-11-03T10:21:24.557+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.557+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.557+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.557+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.557+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.557+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.558+0000] {spark_submit.py:495} INFO - Caused by: java.lang.NoSuchMethodException: org.apache.spark.sql.execution.datasources.v2.DataSourceRDDPartition.<init>()
+[2024-11-03T10:21:24.558+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+[2024-11-03T10:21:24.558+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor(Class.java:2271)
+[2024-11-03T10:21:24.558+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$7(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.558+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2024-11-03T10:21:24.558+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.559+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.559+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.559+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2024-11-03T10:21:24.559+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2024-11-03T10:21:24.559+0000] {spark_submit.py:495} INFO - at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2024-11-03T10:21:24.559+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.560+0000] {spark_submit.py:495} INFO - ... 23 more
+[2024-11-03T10:21:24.560+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T10:21:24.560+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2785)
+[2024-11-03T10:21:24.560+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2721)
+[2024-11-03T10:21:24.560+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2720)
+[2024-11-03T10:21:24.560+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2720)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1545)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.561+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.562+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.562+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.562+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.562+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:971)
+[2024-11-03T10:21:24.562+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2263)
+[2024-11-03T10:21:24.562+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeWrite$1(FileFormatWriter.scala:241)
+[2024-11-03T10:21:24.563+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:271)
+[2024-11-03T10:21:24.563+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:212)
+[2024-11-03T10:21:24.563+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:193)
+[2024-11-03T10:21:24.563+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.FileStreamSink.addBatch(FileStreamSink.scala:171)
+[2024-11-03T10:21:24.563+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:729)
+[2024-11-03T10:21:24.564+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+[2024-11-03T10:21:24.564+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+[2024-11-03T10:21:24.564+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+[2024-11-03T10:21:24.564+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2024-11-03T10:21:24.564+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+[2024-11-03T10:21:24.564+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:726)
+[2024-11-03T10:21:24.565+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)
+[2024-11-03T10:21:24.565+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)
+[2024-11-03T10:21:24.565+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+[2024-11-03T10:21:24.565+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:726)
+[2024-11-03T10:21:24.565+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:284)
+[2024-11-03T10:21:24.565+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.566+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)
+[2024-11-03T10:21:24.566+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)
+[2024-11-03T10:21:24.566+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+[2024-11-03T10:21:24.566+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:247)
+[2024-11-03T10:21:24.566+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+[2024-11-03T10:21:24.566+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:237)
+[2024-11-03T10:21:24.567+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:306)
+[2024-11-03T10:21:24.567+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.567+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2024-11-03T10:21:24.567+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:284)
+[2024-11-03T10:21:24.567+0000] {spark_submit.py:495} INFO - at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:207)
+[2024-11-03T10:21:24.567+0000] {spark_submit.py:495} INFO - Caused by: org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:24.568+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:185)
+[2024-11-03T10:21:24.568+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:24.568+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.Utils$.withContextClassLoader(Utils.scala:240)
+[2024-11-03T10:21:24.568+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.newKryo(KryoSerializer.scala:173)
+[2024-11-03T10:21:24.568+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$$anon$1.create(KryoSerializer.scala:104)
+[2024-11-03T10:21:24.568+0000] {spark_submit.py:495} INFO - at com.esotericsoftware.kryo.pool.KryoPoolQueueImpl.borrow(KryoPoolQueueImpl.java:48)
+[2024-11-03T10:21:24.569+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$PoolWrapper.borrow(KryoSerializer.scala:111)
+[2024-11-03T10:21:24.569+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.borrowKryo(KryoSerializer.scala:351)
+[2024-11-03T10:21:24.569+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializationStream.<init>(KryoSerializer.scala:271)
+[2024-11-03T10:21:24.569+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.serializeStream(KryoSerializer.scala:437)
+[2024-11-03T10:21:24.569+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast$.blockifyObject(TorrentBroadcast.scala:356)
+[2024-11-03T10:21:24.569+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.writeBlocks(TorrentBroadcast.scala:160)
+[2024-11-03T10:21:24.570+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.<init>(TorrentBroadcast.scala:99)
+[2024-11-03T10:21:24.570+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcastFactory.newBroadcast(TorrentBroadcastFactory.scala:38)
+[2024-11-03T10:21:24.570+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.BroadcastManager.newBroadcast(BroadcastManager.scala:78)
+[2024-11-03T10:21:24.570+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcastInternal(SparkContext.scala:1548)
+[2024-11-03T10:21:24.570+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1530)
+[2024-11-03T10:21:24.570+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1535)
+[2024-11-03T10:21:24.571+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:24.571+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:24.571+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:24.571+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:24.571+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:24.572+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:24.572+0000] {spark_submit.py:495} INFO - Caused by: java.lang.NoSuchMethodException: org.apache.spark.sql.execution.datasources.v2.DataSourceRDDPartition.<init>()
+[2024-11-03T10:21:24.572+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+[2024-11-03T10:21:24.572+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor(Class.java:2271)
+[2024-11-03T10:21:24.572+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$7(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.572+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2024-11-03T10:21:24.573+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:24.573+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:24.573+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:24.573+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2024-11-03T10:21:24.573+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2024-11-03T10:21:24.573+0000] {spark_submit.py:495} INFO - at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2024-11-03T10:21:24.574+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:180)
+[2024-11-03T10:21:24.574+0000] {spark_submit.py:495} INFO - ... 23 more
+[2024-11-03T10:21:24.574+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO AppInfoParser: App info kafka.admin.client for adminclient-1 unregistered
+[2024-11-03T10:21:24.656+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO Metrics: Metrics scheduler closed
+[2024-11-03T10:21:24.682+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO Metrics: Closing reporter org.apache.kafka.common.metrics.JmxReporter
+[2024-11-03T10:21:24.697+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO Metrics: Metrics reporters closed
+[2024-11-03T10:21:24.698+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:24 INFO MicroBatchExecution: Async log purge executor pool for query [id = cb9c0f90-a8b1-41c2-889e-c10845e7c13d, runId = 26db3f6c-9ea2-4a65-9d6e-badd777b2b83] has been shutdown
+[2024-11-03T10:21:26.530+0000] {spark_submit.py:495} INFO - Traceback (most recent call last):
+[2024-11-03T10:21:26.531+0000] {spark_submit.py:495} INFO - File "/opt/***/dags/spark_streaming_job.py", line 65, in <module>
+[2024-11-03T10:21:26.533+0000] {spark_submit.py:495} INFO - spark_streaming_job()
+[2024-11-03T10:21:26.534+0000] {spark_submit.py:495} INFO - File "/opt/***/dags/spark_streaming_job.py", line 52, in spark_streaming_job
+[2024-11-03T10:21:26.549+0000] {spark_submit.py:495} INFO - query.awaitTermination()
+[2024-11-03T10:21:26.551+0000] {spark_submit.py:495} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/streaming/query.py", line 201, in awaitTermination
+[2024-11-03T10:21:26.551+0000] {spark_submit.py:495} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1322, in __call__
+[2024-11-03T10:21:26.551+0000] {spark_submit.py:495} INFO - File "/home/***/.local/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 175, in deco
+[2024-11-03T10:21:26.582+0000] {spark_submit.py:495} INFO - pyspark.errors.exceptions.captured.StreamingQueryException: [STREAM_FAILED] Query [id = cb9c0f90-a8b1-41c2-889e-c10845e7c13d, runId = 26db3f6c-9ea2-4a65-9d6e-badd777b2b83] terminated with exception: Job aborted due to stage failure: Task serialization failed: org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:26.582+0000] {spark_submit.py:495} INFO - org.apache.spark.SparkException: Failed to register classes with Kryo
+[2024-11-03T10:21:26.583+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:185)
+[2024-11-03T10:21:26.583+0000] {spark_submit.py:495} INFO - at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-11-03T10:21:26.583+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.Utils$.withContextClassLoader(Utils.scala:240)
+[2024-11-03T10:21:26.600+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.newKryo(KryoSerializer.scala:173)
+[2024-11-03T10:21:26.600+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$$anon$1.create(KryoSerializer.scala:104)
+[2024-11-03T10:21:26.601+0000] {spark_submit.py:495} INFO - at com.esotericsoftware.kryo.pool.KryoPoolQueueImpl.borrow(KryoPoolQueueImpl.java:48)
+[2024-11-03T10:21:26.601+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer$PoolWrapper.borrow(KryoSerializer.scala:111)
+[2024-11-03T10:21:26.601+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.borrowKryo(KryoSerializer.scala:351)
+[2024-11-03T10:21:26.601+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializationStream.<init>(KryoSerializer.scala:271)
+[2024-11-03T10:21:26.601+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializerInstance.serializeStream(KryoSerializer.scala:437)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast$.blockifyObject(TorrentBroadcast.scala:356)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.writeBlocks(TorrentBroadcast.scala:160)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcast.<init>(TorrentBroadcast.scala:99)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.TorrentBroadcastFactory.newBroadcast(TorrentBroadcastFactory.scala:38)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.broadcast.BroadcastManager.newBroadcast(BroadcastManager.scala:78)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcastInternal(SparkContext.scala:1548)
+[2024-11-03T10:21:26.602+0000] {spark_submit.py:495} INFO - at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1530)
+[2024-11-03T10:21:26.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitMissingTasks(DAGScheduler.scala:1535)
+[2024-11-03T10:21:26.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.submitStage(DAGScheduler.scala:1353)
+[2024-11-03T10:21:26.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGScheduler.handleJobSubmitted(DAGScheduler.scala:1295)
+[2024-11-03T10:21:26.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2931)
+[2024-11-03T10:21:26.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2923)
+[2024-11-03T10:21:26.603+0000] {spark_submit.py:495} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2912)
+[2024-11-03T10:21:26.604+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-03T10:21:26.604+0000] {spark_submit.py:495} INFO - Caused by: java.lang.NoSuchMethodException: org.apache.spark.sql.execution.datasources.v2.DataSourceRDDPartition.<init>()
+[2024-11-03T10:21:26.604+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor0(Class.java:3585)
+[2024-11-03T10:21:26.604+0000] {spark_submit.py:495} INFO - at java.base/java.lang.Class.getConstructor(Class.java:2271)
+[2024-11-03T10:21:26.604+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$7(KryoSerializer.scala:180)
+[2024-11-03T10:21:26.604+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:286)
+[2024-11-03T10:21:26.605+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-03T10:21:26.605+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-03T10:21:26.605+0000] {spark_submit.py:495} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-03T10:21:26.605+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map(TraversableLike.scala:286)
+[2024-11-03T10:21:26.605+0000] {spark_submit.py:495} INFO - at scala.collection.TraversableLike.map$(TraversableLike.scala:279)
+[2024-11-03T10:21:26.605+0000] {spark_submit.py:495} INFO - at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+[2024-11-03T10:21:26.606+0000] {spark_submit.py:495} INFO - at org.apache.spark.serializer.KryoSerializer.$anonfun$newKryo$5(KryoSerializer.scala:180)
+[2024-11-03T10:21:26.606+0000] {spark_submit.py:495} INFO - ... 23 more
+[2024-11-03T10:21:26.606+0000] {spark_submit.py:495} INFO - 
+[2024-11-03T10:21:26.846+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:26 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-11-03T10:21:26.966+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:26 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-11-03T10:21:27.104+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:27 INFO SparkUI: Stopped Spark web UI at http://7d9160448bdc:4040
+[2024-11-03T10:21:27.166+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:27 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-11-03T10:21:27.186+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:27 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-11-03T10:21:27.944+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:27 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-11-03T10:21:28.321+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO MemoryStore: MemoryStore cleared
+[2024-11-03T10:21:28.329+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO BlockManager: BlockManager stopped
+[2024-11-03T10:21:28.483+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-11-03T10:21:28.576+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-11-03T10:21:28.874+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO SparkContext: Successfully stopped SparkContext
+[2024-11-03T10:21:28.880+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO ShutdownHookManager: Shutdown hook called
+[2024-11-03T10:21:28.884+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO ShutdownHookManager: Deleting directory /tmp/spark-7064a308-ec5d-41b3-abb0-8cf47dace0d9
+[2024-11-03T10:21:28.989+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:28 INFO ShutdownHookManager: Deleting directory /tmp/spark-e7620fb0-7b38-44db-8ee6-c2b9cd0e7564/pyspark-2b585b91-191e-45e8-a3ac-a2730c806332
+[2024-11-03T10:21:29.124+0000] {spark_submit.py:495} INFO - 24/11/03 10:21:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-e7620fb0-7b38-44db-8ee6-c2b9cd0e7564
+[2024-11-03T10:21:29.823+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T10:21:29.947+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 426, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop-3.2.1/etc/hadoop --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.
+[2024-11-03T10:21:30.028+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=sensor_data_consumer, task_id=sensor_data_consumer, run_id=manual__2024-11-03T10:18:44.812760+00:00, execution_date=20241103T101844, start_date=20241103T101856, end_date=20241103T102130
+[2024-11-03T10:21:30.111+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 211 for task sensor_data_consumer (Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.HADOOP_CONF_DIR=/opt/hadoop-3.2.1/etc/hadoop --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.; 5136)
+[2024-11-03T10:21:30.263+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-11-03T10:21:30.384+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-03T10:21:30.530+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

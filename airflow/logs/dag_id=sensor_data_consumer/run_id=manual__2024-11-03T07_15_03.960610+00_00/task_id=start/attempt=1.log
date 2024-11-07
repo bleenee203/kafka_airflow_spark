@@ -1,0 +1,18 @@
+[2024-11-03T07:15:19.013+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-03T07:15:19.594+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data_consumer.start manual__2024-11-03T07:15:03.960610+00:00 [queued]>
+[2024-11-03T07:15:19.770+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data_consumer.start manual__2024-11-03T07:15:03.960610+00:00 [queued]>
+[2024-11-03T07:15:19.770+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-03T07:15:20.011+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): start> on 2024-11-03 07:15:03.960610+00:00
+[2024-11-03T07:15:20.096+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data_consumer', 'start', 'manual__2024-11-03T07:15:03.960610+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/***_consumer.py', '--cfg-path', '/tmp/tmpumncgny_']
+[2024-11-03T07:15:20.162+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask start
+[2024-11-03T07:15:20.120+0000] {standard_task_runner.py:64} INFO - Started process 299 to run task
+[2024-11-03T07:15:24.157+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data_consumer.start manual__2024-11-03T07:15:03.960610+00:00 [running]> on host 7d9160448bdc
+[2024-11-03T07:15:30.263+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='sensor_data_consumer' AIRFLOW_CTX_TASK_ID='start' AIRFLOW_CTX_EXECUTION_DATE='2024-11-03T07:15:03.960610+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-03T07:15:03.960610+00:00'
+[2024-11-03T07:15:30.378+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-03T07:15:31.048+0000] {logging_mixin.py:188} INFO - Jobs Started
+[2024-11-03T07:15:31.227+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-03T07:15:31.229+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-03T07:15:31.961+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=sensor_data_consumer, task_id=start, run_id=manual__2024-11-03T07:15:03.960610+00:00, execution_date=20241103T071503, start_date=20241103T071519, end_date=20241103T071531
+[2024-11-03T07:15:34.391+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-11-03T07:15:35.462+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-03T07:15:35.554+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

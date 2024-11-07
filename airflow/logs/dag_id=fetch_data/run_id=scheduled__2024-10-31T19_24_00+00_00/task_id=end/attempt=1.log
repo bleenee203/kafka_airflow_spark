@@ -1,0 +1,53 @@
+[2024-10-31T19:28:05.442+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-31T19:28:05.788+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.end scheduled__2024-10-31T19:24:00+00:00 [queued]>
+[2024-10-31T19:28:05.804+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.end scheduled__2024-10-31T19:24:00+00:00 [queued]>
+[2024-10-31T19:28:05.805+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-31T19:28:05.843+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): end> on 2024-10-31 19:24:00+00:00
+[2024-10-31T19:28:05.863+0000] {standard_task_runner.py:64} INFO - Started process 1170 to run task
+[2024-10-31T19:28:05.869+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'end', 'scheduled__2024-10-31T19:24:00+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmphcmbivqr']
+[2024-10-31T19:28:05.875+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask end
+[2024-10-31T19:28:06.028+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.end scheduled__2024-10-31T19:24:00+00:00 [running]> on host c9b652114d41
+[2024-10-31T19:28:06.898+0000] {local_task_job_runner.py:124} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-10-31T19:28:07.503+0000] {process_utils.py:132} INFO - Sending 15 to group 1170. PIDs of all processes in the group: [1170]
+[2024-10-31T19:28:07.645+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1170
+[2024-10-31T19:28:07.663+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-10-31T19:28:08.238+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 2479, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 2637, in _execute_task_with_callbacks
+    RenderedTaskInstanceFields.write(rtif)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 78, in wrapper
+    with create_session() as session:
+  File "/usr/local/lib/python3.11/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/session.py", line 39, in create_session
+    session.commit()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1454, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 839, in commit
+    trans.commit()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2469, in commit
+    self._do_commit()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2659, in _do_commit
+    self._connection_commit_impl()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2630, in _connection_commit_impl
+    self.connection._commit_impl()
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1096, in _commit_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2138, in _handle_dbapi_exception
+    util.raise_(exc_info[1], with_traceback=exc_info[2])
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1094, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 686, in do_commit
+    dbapi_connection.commit()
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 2613, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2024-10-31T19:28:11.044+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=fetch_data, task_id=end, run_id=scheduled__2024-10-31T19:24:00+00:00, execution_date=20241031T192400, start_date=20241031T192805, end_date=20241031T192811
+[2024-10-31T19:28:12.111+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1170, status='terminated', exitcode=2, started='19:28:05') (1170) terminated with exit code 2
+[2024-10-31T19:28:12.125+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 143
+[2024-10-31T19:28:12.310+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-31T19:28:13.741+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

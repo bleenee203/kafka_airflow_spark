@@ -11,37 +11,60 @@ from datetime import datetime
 from kafka import KafkaProducer
 import logging
 from dotenv import load_dotenv
-
+import requests
 
 load_dotenv()
 
-def fetch_data_from_api(id):
+# def fetch_data_from_api(id):
+def fetch_data_from_api():
     #thay the bang code fetch data
-    raw_data = {
-        "sensor_id": id,
-        "temperature": round(random.uniform(29.0, 30.0), 2),  # Random temperature between 20.0 and 30.0 degrees
-        "humidity": round(random.uniform(50.0, 51.0), 2),     # Random humidity between 30.0% and 60.0%
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # raw_data = {
+    #     "sensor_id": id,
+    #     "temperature": round(random.uniform(29.0, 30.0), 2),  # Random temperature between 20.0 and 30.0 degrees
+    #     "humidity": round(random.uniform(50.0, 51.0), 2),     # Random humidity between 30.0% and 60.0%
+    #     "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # }
+    url = "https://data.cityofnewyork.us/resource/h9gi-nx95.json"
+    params = {
+        "$order": "crash_date DESC",
     }
-    print('generating')
-    print(raw_data)
-    return raw_data
+    
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()  
+        raw_data = response.json()  
+        logging.info(f"Fetched {len(raw_data)} records from API")
+        print('generating')
+        print(raw_data)
+        return raw_data
+    except requests.exceptions.RequestException as e:
+        logging.error(f"An error occurred while fetching data: {e}")
+        return []
 
 def stream_data():
     kafka_host = os.environ.get('KAFKA_HOST', 'localhost')
     producer = KafkaProducer(bootstrap_servers=['10.0.2.15:9092'], max_block_ms=5000,api_version=(0,11,5),
               )
     curr_time = time.time()
-    id = 0
-    while True:
-        if time.time() > curr_time + 60: 
+    # id = 0
+    # while True:
+        # if time.time() > curr_time + 60: 
+        #     break
+        # try:
+        #     id += 1
+        #     # res = fetch_data_from_api(id)
+        #     if id >= 5:
+        #         id = 0
+        #     print(res, end="\r")
+    data = fetch_data_from_api()
+    if not data:
+        logging.error("No data fetched; exiting the stream.")
+        return
+    
+    for res in data:
+        if time.time() > curr_time + 60:
             break
         try:
-            id += 1
-            res = fetch_data_from_api(id)
-            if id >= 5:
-                id = 0
-            print(res, end="\r")
             producer.send('raw_data', json.dumps(res).encode('utf-8'))
             producer.flush()
             time.sleep(1)

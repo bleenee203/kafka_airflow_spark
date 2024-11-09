@@ -16,10 +16,28 @@ def spark_streaming_job():
         .getOrCreate()
 
     schema = StructType([
-        StructField("sensor_id", IntegerType(), False),
-        StructField("temperature", FloatType(), False),
-        StructField("humidity", FloatType(), False),
-        StructField("timestamp", StringType(), False)
+        StructField("crash_date", StringType(), True),
+        StructField("crash_time", StringType(), True),
+        StructField("borough", StringType(), True),
+        StructField("latitude", FloatType(), True),
+        StructField("longitude", FloatType(), True),
+        StructField("on_street_name", StringType(), True),
+        StructField("off_street_name", StringType(), True),
+        StructField("number_of_persons_injured", IntegerType(), True),
+        StructField("number_of_persons_killed", IntegerType(), True),
+        StructField("number_of_pedestrians_injured", IntegerType(), True),
+        StructField("number_of_pedestrians_killed", IntegerType(), True),
+        StructField("number_of_cyclist_injured", IntegerType(), True),
+        StructField("number_of_cyclist_killed", IntegerType(), True),
+        StructField("number_of_motorist_injured", IntegerType(), True),
+        StructField("number_of_motorist_killed", IntegerType(), True),
+        StructField("contributing_factor_vehicle_1", StringType(), True),
+        StructField("contributing_factor_vehicle_2", StringType(), True),
+        StructField("vehicle_type_code1", StringType(), True),
+        StructField("vehicle_type_code2", StringType(), True),
+        StructField("vehicle_type_code3", StringType(), True),
+        StructField("vehicle_type_code4", StringType(), True),
+        StructField("vehicle_type_code5", StringType(), True)
     ])
 
     # Kết nối tới Kafka

@@ -63,3 +63,12 @@ df.show()
 
 
 Pull git lên bị lỗi: xác thực -> git remote set-url origin git@github.com:bleenee203/kafka_airflow_spark
+
+
+ĐỂ TRUY CẬP VÀO NOTEBOOK
+- Sau khi pull về code mới, ở thư mục airflow, chạy lệnh: Docker compose down 
+- Sau đó chạy lại: Docker compose up và đợi khá lâu.
+- Sau khi đã chạy xong docker compose up ở airflow, mở terminal mới, vẫn ở trong thư mục airflow chạy lệnh: Docker logs -f airflow-jupyter-spark-1 
+- Tìm đến link có chứa địa chỉ IP port 8888 kèm theo token, mở link đó để vào Jupyter NoteBook .
+
+![image](https://github.com/user-attachments/assets/359c69a6-4dc5-474c-afdb-8cac96e92e88)

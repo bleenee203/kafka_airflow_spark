@@ -6,6 +6,6 @@ apache-airflow
 # apache-airflow-providers-apache-spark
 elasticsearch
 psycopg2-binary
-pyspark==3.4.2
+pyspark==3.4.1
 apache-airflow-providers-apache-spark==4.0.0
 python-dotenv

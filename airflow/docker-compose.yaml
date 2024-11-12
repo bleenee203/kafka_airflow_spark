@@ -27,7 +27,7 @@ x-airflow-common:
       condition: service_healthy
 
 x-spark-common: &spark-common
-  image: bitnami/spark:3.4.2
+  image: bitnami/spark:3.4.1
   user: root
   volumes:
     - ./dags:/opt/bitnami/spark/jobs
@@ -577,6 +577,22 @@ services:
       MAPRED_CONF_yarn_app_mapreduce_am_env: 'HADOOP_MAPRED_HOME=/opt/hadoop-3.2.1/'
       MAPRED_CONF_mapreduce_map_env: 'HADOOP_MAPRED_HOME=/opt/hadoop-3.2.1/'
       MAPRED_CONF_mapreduce_reduce_env: 'HADOOP_MAPRED_HOME=/opt/hadoop-3.2.1/'
+
+   #Jupyter notebook
+  jupyter-spark:
+    image: jupyter/pyspark-notebook:spark-3.4.1
+    ports:
+      - "8888:8888"
+      - "4040-4080:4040-4080"
+    volumes:
+      - ../notebooks:/home/jovyan/work/notebooks/
+    environment:
+      - SPARK_OPTS=--conf spark.driver.memory=4g \
+                  --conf spark.executor.memory=4g \
+                  --conf spark.driver.maxResultSize=2g \
+                  --conf spark.serializer=org.apache.spark.serializer.KryoSerializer \
+                  --conf spark.sql.execution.arrow.pyspark.enabled=true
+
 
 volumes:
   postgres-db-volume:

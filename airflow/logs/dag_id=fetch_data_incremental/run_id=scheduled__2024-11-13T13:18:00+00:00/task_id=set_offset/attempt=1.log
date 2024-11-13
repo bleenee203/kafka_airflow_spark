@@ -1,0 +1,17 @@
+[2024-11-13T13:19:19.991+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-13T13:19:20.187+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_incremental.set_offset scheduled__2024-11-13T13:18:00+00:00 [queued]>
+[2024-11-13T13:19:20.226+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_incremental.set_offset scheduled__2024-11-13T13:18:00+00:00 [queued]>
+[2024-11-13T13:19:20.227+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-13T13:19:20.683+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): set_offset> on 2024-11-13 13:18:00+00:00
+[2024-11-13T13:19:20.691+0000] {standard_task_runner.py:64} INFO - Started process 1178 to run task
+[2024-11-13T13:19:20.698+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_incremental', 'set_offset', 'scheduled__2024-11-13T13:18:00+00:00', '--job-id', '698', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmpwnyvtkvm']
+[2024-11-13T13:19:20.701+0000] {standard_task_runner.py:91} INFO - Job 698: Subtask set_offset
+[2024-11-13T13:19:20.815+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data_incremental.set_offset scheduled__2024-11-13T13:18:00+00:00 [running]> on host b51985a4b8f1
+[2024-11-13T13:19:21.002+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data_incremental' AIRFLOW_CTX_TASK_ID='set_offset' AIRFLOW_CTX_EXECUTION_DATE='2024-11-13T13:18:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-13T13:18:00+00:00'
+[2024-11-13T13:19:21.004+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-13T13:19:21.099+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-13T13:19:21.100+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-13T13:19:21.127+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fetch_data_incremental, task_id=set_offset, run_id=scheduled__2024-11-13T13:18:00+00:00, execution_date=20241113T131800, start_date=20241113T131920, end_date=20241113T131921
+[2024-11-13T13:19:21.198+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-11-13T13:19:21.258+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-13T13:19:21.264+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

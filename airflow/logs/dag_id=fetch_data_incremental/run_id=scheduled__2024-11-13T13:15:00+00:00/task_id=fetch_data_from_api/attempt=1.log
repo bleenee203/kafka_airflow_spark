@@ -1,0 +1,41 @@
+[2024-11-13T13:16:08.938+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-13T13:16:09.035+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data_incremental.fetch_data_from_api scheduled__2024-11-13T13:15:00+00:00 [queued]>
+[2024-11-13T13:16:09.048+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data_incremental.fetch_data_from_api scheduled__2024-11-13T13:15:00+00:00 [queued]>
+[2024-11-13T13:16:09.048+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-13T13:16:09.222+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_from_api> on 2024-11-13 13:15:00+00:00
+[2024-11-13T13:16:09.228+0000] {standard_task_runner.py:64} INFO - Started process 1063 to run task
+[2024-11-13T13:16:09.233+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data_incremental', 'fetch_data_from_api', 'scheduled__2024-11-13T13:15:00+00:00', '--job-id', '690', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmp360m2r_u']
+[2024-11-13T13:16:09.236+0000] {standard_task_runner.py:91} INFO - Job 690: Subtask fetch_data_from_api
+[2024-11-13T13:16:09.327+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data_incremental.fetch_data_from_api scheduled__2024-11-13T13:15:00+00:00 [running]> on host b51985a4b8f1
+[2024-11-13T13:16:09.434+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data_incremental' AIRFLOW_CTX_TASK_ID='fetch_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2024-11-13T13:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-13T13:15:00+00:00'
+[2024-11-13T13:16:09.434+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-13T13:16:09.526+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-13T13:16:09.528+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-13T13:16:14.059+0000] {airflow_producer.py:114} INFO - Fetched 100 records from API with offset 0
+[2024-11-13T13:16:14.080+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-13T13:16:14.082+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/airflow_producer.py", line 126, in stream_data
+    if offset >= total_count:
+                 ^^^^^^^^^^^
+NameError: name 'total_count' is not defined
+[2024-11-13T13:16:14.235+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=fetch_data_incremental, task_id=fetch_data_from_api, run_id=scheduled__2024-11-13T13:15:00+00:00, execution_date=20241113T131500, start_date=20241113T131609, end_date=20241113T131614
+[2024-11-13T13:16:14.258+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 690 for task fetch_data_from_api (name 'total_count' is not defined; 1063)
+[2024-11-13T13:16:14.318+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-11-13T13:16:14.347+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-13T13:16:14.354+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

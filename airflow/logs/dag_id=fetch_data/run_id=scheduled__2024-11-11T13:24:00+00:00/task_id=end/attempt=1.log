@@ -1,0 +1,13 @@
+[2024-11-11T13:28:32.173+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-11T13:28:33.231+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.end scheduled__2024-11-11T13:24:00+00:00 [queued]>
+[2024-11-11T13:28:34.129+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.end scheduled__2024-11-11T13:24:00+00:00 [queued]>
+[2024-11-11T13:28:34.198+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-11T13:28:38.355+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): end> on 2024-11-11 13:24:00+00:00
+[2024-11-11T13:28:38.564+0000] {standard_task_runner.py:64} INFO - Started process 4629 to run task
+[2024-11-11T13:28:38.649+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'end', 'scheduled__2024-11-11T13:24:00+00:00', '--job-id', '357', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmpy1ix65ea']
+[2024-11-11T13:28:38.779+0000] {standard_task_runner.py:91} INFO - Job 357: Subtask end
+[2024-11-11T13:37:45.198+0000] {local_task_job_runner.py:214} ERROR - Heartbeat time limit exceeded!
+[2024-11-11T13:37:45.498+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-11-11T13:37:46.067+0000] {process_utils.py:132} INFO - Sending 15 to group 4629. PIDs of all processes in the group: [4629]
+[2024-11-11T13:37:46.099+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 4629
+[2024-11-11T13:37:46.342+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=4629, status='terminated', exitcode=<Negsignal.SIGTERM: -15>, started='13:28:37') (4629) terminated with exit code -15

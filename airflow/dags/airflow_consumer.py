@@ -14,7 +14,7 @@ dag = DAG(
         "owner" : "Bich Ly",
         "start_date" : airflow.utils.dates.days_ago(1),
     },
-    schedule_interval = "@yearly",
+    schedule_interval = "@daily",
     catchup = False
 )
 

@@ -1,0 +1,22 @@
+[2024-11-11T09:30:01.023+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-11T09:30:01.052+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-11T09:27:00+00:00 [queued]>
+[2024-11-11T09:30:01.061+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-11T09:27:00+00:00 [queued]>
+[2024-11-11T09:30:01.061+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-11T09:30:01.187+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_from_api> on 2024-11-11 09:27:00+00:00
+[2024-11-11T09:30:01.192+0000] {standard_task_runner.py:64} INFO - Started process 6768 to run task
+[2024-11-11T09:30:01.195+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'fetch_data_from_api', 'scheduled__2024-11-11T09:27:00+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmpy23begco']
+[2024-11-11T09:30:01.197+0000] {standard_task_runner.py:91} INFO - Job 125: Subtask fetch_data_from_api
+[2024-11-11T09:30:01.257+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.fetch_data_from_api scheduled__2024-11-11T09:27:00+00:00 [running]> on host 4456ca8d9d4c
+[2024-11-11T09:30:01.338+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data' AIRFLOW_CTX_TASK_ID='fetch_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2024-11-11T09:27:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-11T09:27:00+00:00'
+[2024-11-11T09:30:01.339+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-11T09:30:01.407+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-11T09:30:01.409+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-11T09:30:05.375+0000] {airflow_producer.py:33} ERROR - An error occurred while fetching data: HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Max retries exceeded with url: /resource/h9gi-nx95.json?%24order=crash_date+DESC (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77f96c9d6e90>: Failed to resolve 'data.cityofnewyork.us' ([Errno -2] Name or service not known)"))
+[2024-11-11T09:30:05.376+0000] {airflow_producer.py:43} ERROR - No data fetched; exiting the stream.
+[2024-11-11T09:30:05.376+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-11T09:30:05.377+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-11T09:30:05.383+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-11T09:30:05.387+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=fetch_data, task_id=fetch_data_from_api, run_id=scheduled__2024-11-11T09:27:00+00:00, execution_date=20241111T092700, start_date=20241111T093001, end_date=20241111T093005
+[2024-11-11T09:30:05.442+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-11-11T09:30:05.463+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-11T09:30:05.466+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

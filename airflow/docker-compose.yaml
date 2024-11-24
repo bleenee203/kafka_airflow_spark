@@ -197,8 +197,8 @@ services:
       - spark-master
     environment:
       SPARK_MODE: worker
-      SPARK_WORKER_CORES: 1
-      SPARK_WORKER_MEMORY: 1g
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
       SPARK_MASTER_URL: spark://spark-master:7077
       SPARK_NETWORK_TIMEOUT : 6000s  
       SPARK_EXECUTOR_HEARTBEATINTERVAL : 1000s  
@@ -215,8 +215,8 @@ services:
       - spark-master
     environment:
       SPARK_MODE: worker
-      SPARK_WORKER_CORES: 1
-      SPARK_WORKER_MEMORY: 1g
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
       SPARK_MASTER_URL: spark://spark-master:7077
       SPARK_NETWORK_TIMEOUT : 6000s  
       SPARK_EXECUTOR_HEARTBEATINTERVAL : 1000s  
@@ -226,23 +226,23 @@ services:
     volumes:
       - hadoop-config:/opt/hadoop-3.2.1/etc/hadoop
 
-  spark-worker-3:
-    <<: *spark-common
-    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
-    depends_on:
-      - spark-master
-    environment:
-      SPARK_MODE: worker
-      SPARK_WORKER_CORES: 1
-      SPARK_WORKER_MEMORY: 1g
-      SPARK_MASTER_URL: spark://spark-master:7077
-      SPARK_NETWORK_TIMEOUT : 6000s  
-      SPARK_EXECUTOR_HEARTBEATINTERVAL : 1000s  
-      SPARK_RPC_MESSAGE_MAX_SIZE: 1024
-      HADOOP_CONF_DIR: /opt/hadoop-3.2.1/etc/hadoop
+  # spark-worker-3:
+  #   <<: *spark-common
+  #   command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+  #   depends_on:
+  #     - spark-master
+  #   environment:
+  #     SPARK_MODE: worker
+  #     SPARK_WORKER_CORES: 2
+  #     SPARK_WORKER_MEMORY: 2g
+  #     SPARK_MASTER_URL: spark://spark-master:7077
+  #     SPARK_NETWORK_TIMEOUT : 6000s  
+  #     SPARK_EXECUTOR_HEARTBEATINTERVAL : 1000s  
+  #     SPARK_RPC_MESSAGE_MAX_SIZE: 1024
+  #     HADOOP_CONF_DIR: /opt/hadoop-3.2.1/etc/hadoop
       
-    volumes:
-      - hadoop-config:/opt/hadoop-3.2.1/etc/hadoop
+  #   volumes:
+  #     - hadoop-config:/opt/hadoop-3.2.1/etc/hadoop
 
   namenode:
     image: 'bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8'

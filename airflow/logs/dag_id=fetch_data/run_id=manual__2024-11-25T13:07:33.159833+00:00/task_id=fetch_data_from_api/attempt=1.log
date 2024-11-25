@@ -1,0 +1,94 @@
+[2024-11-25T13:07:47.452+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-25T13:07:47.964+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api manual__2024-11-25T13:07:33.159833+00:00 [queued]>
+[2024-11-25T13:07:48.116+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api manual__2024-11-25T13:07:33.159833+00:00 [queued]>
+[2024-11-25T13:07:48.118+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-25T13:07:49.589+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_from_api> on 2024-11-25 13:07:33.159833+00:00
+[2024-11-25T13:07:49.769+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'fetch_data_from_api', 'manual__2024-11-25T13:07:33.159833+00:00', '--job-id', '324', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmpmms6pu05']
+[2024-11-25T13:07:49.773+0000] {standard_task_runner.py:91} INFO - Job 324: Subtask fetch_data_from_api
+[2024-11-25T13:07:49.764+0000] {standard_task_runner.py:64} INFO - Started process 1028 to run task
+[2024-11-25T13:07:50.625+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.fetch_data_from_api manual__2024-11-25T13:07:33.159833+00:00 [running]> on host a9401edbac39
+[2024-11-25T13:07:51.288+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data' AIRFLOW_CTX_TASK_ID='fetch_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2024-11-25T13:07:33.159833+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-25T13:07:33.159833+00:00'
+[2024-11-25T13:07:51.290+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-25T13:07:51.466+0000] {logging_mixin.py:188} INFO - 1000
+[2024-11-25T13:07:51.627+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-25T13:07:51.642+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-25T13:07:57.150+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 0
+[2024-11-25T13:07:57.158+0000] {airflow_producer.py:62} INFO - Offset: 0, Records fetched: 100
+[2024-11-25T13:07:57.172+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-25T13:07:57.178+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-25T13:07:57.179+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-25T13:07:59.540+0000] {airflow_producer.py:78} INFO - Streamed 100 records in this batch.
+[2024-11-25T13:08:09.645+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 100
+[2024-11-25T13:08:09.683+0000] {airflow_producer.py:62} INFO - Offset: 100, Records fetched: 100
+[2024-11-25T13:08:14.324+0000] {airflow_producer.py:78} INFO - Streamed 100 records in this batch.
+[2024-11-25T13:08:25.412+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 200
+[2024-11-25T13:08:25.490+0000] {airflow_producer.py:62} INFO - Offset: 200, Records fetched: 100
+[2024-11-25T13:08:33.956+0000] {airflow_producer.py:78} INFO - Streamed 100 records in this batch.
+[2024-11-25T13:08:56.195+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 300
+[2024-11-25T13:09:15.643+0000] {airflow_producer.py:62} INFO - Offset: 300, Records fetched: 100
+[2024-11-25T13:09:53.117+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:09:53.842+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:09:55.556+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:09:57.991+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:09:58.070+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:09:58.073+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:09:58.188+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:09:58.241+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:09:58.313+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:09:58.499+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:09:58.746+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:09:58.828+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:09:59.404+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:10:04.201+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:10:04.418+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:10:08.861+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:10:12.538+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:10:13.402+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:10:13.310+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:10:51.715+0000] {client_async.py:698} WARNING - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]> timed out after 30000 ms. Closing connection.
+[2024-11-25T13:11:42.196+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. [Error 7] RequestTimedOutError: Request timed out after 30000 ms
+[2024-11-25T13:13:31.894+0000] {client_async.py:331} WARNING - Node 1 connection failed -- refreshing metadata
+[2024-11-25T13:13:43.499+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:15:37.910+0000] {record_accumulator.py:534} WARNING - [Error 7] RequestTimedOutError: Request timed out after 30000 ms
+[2024-11-25T13:16:10.035+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-25T13:16:15.582+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-25T13:16:25.918+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:26.089+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:26.091+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:26.115+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:26.504+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:26.505+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:26.716+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:27.180+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:27.368+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:27.369+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:27.729+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:27.756+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:27.815+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:28.000+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:28.076+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:28.172+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:28.814+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:29.089+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:29.209+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:29.350+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:29.351+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:29.351+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:29.411+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:29.581+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:29.600+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:29.764+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:30.262+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:30.679+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:30.680+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:30.683+0000] {cluster.py:245} WARNING - No broker metadata found in MetadataResponse -- ignoring.
+[2024-11-25T13:16:30.858+0000] {record_accumulator.py:73} WARNING - Produced messages to topic-partition ('raw_data', 0) with base offset -1 log start offset None and error None.
+[2024-11-25T13:16:30.974+0000] {record_accumulator.py:534} WARNING - [Error 6] NotLeaderForPartitionError
+[2024-11-25T13:16:34.453+0000] {local_task_job_runner.py:313} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-11-25T13:16:34.455+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-11-25T13:16:34.458+0000] {process_utils.py:132} INFO - Sending 15 to group 1028. PIDs of all processes in the group: [1028]
+[2024-11-25T13:16:34.459+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1028
+[2024-11-25T13:16:34.463+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-11-25T13:16:34.463+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-25T13:16:34.575+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-25T13:16:34.647+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1028, status='terminated', exitcode=0, started='13:07:49') (1028) terminated with exit code 0

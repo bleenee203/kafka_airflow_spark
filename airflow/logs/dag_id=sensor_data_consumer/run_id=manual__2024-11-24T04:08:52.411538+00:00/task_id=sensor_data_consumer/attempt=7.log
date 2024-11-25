@@ -1,0 +1,115 @@
+[2024-11-24T05:08:56.793+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-24T05:08:57.075+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-24T04:08:52.411538+00:00 [queued]>
+[2024-11-24T05:08:57.099+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-24T04:08:52.411538+00:00 [queued]>
+[2024-11-24T05:08:57.100+0000] {taskinstance.py:2306} INFO - Starting attempt 7 of 1
+[2024-11-24T05:08:57.121+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): sensor_data_consumer> on 2024-11-24 04:08:52.411538+00:00
+[2024-11-24T05:08:57.126+0000] {standard_task_runner.py:64} INFO - Started process 230 to run task
+[2024-11-24T05:08:57.130+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data_consumer', 'sensor_data_consumer', 'manual__2024-11-24T04:08:52.411538+00:00', '--job-id', '264', '--raw', '--subdir', 'DAGS_FOLDER/***_consumer.py', '--cfg-path', '/tmp/tmp1l3hk6bw']
+[2024-11-24T05:08:57.133+0000] {standard_task_runner.py:91} INFO - Job 264: Subtask sensor_data_consumer
+[2024-11-24T05:08:57.208+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-24T04:08:52.411538+00:00 [running]> on host a9401edbac39
+[2024-11-24T05:08:57.518+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='sensor_data_consumer' AIRFLOW_CTX_TASK_ID='sensor_data_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-11-24T04:08:52.411538+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-24T04:08:52.411538+00:00'
+[2024-11-24T05:08:57.519+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-24T05:08:57.594+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2024-11-24T05:08:57.597+0000] {spark_submit.py:344} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py
+[2024-11-24T05:09:08.317+0000] {spark_submit.py:495} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-11-24T05:09:09.769+0000] {spark_submit.py:495} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2024-11-24T05:09:09.770+0000] {spark_submit.py:495} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2024-11-24T05:09:09.772+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12 added as a dependency
+[2024-11-24T05:09:09.775+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-11-24T05:09:09.775+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client added as a dependency
+[2024-11-24T05:09:09.848+0000] {spark_submit.py:495} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-882ab7db-2676-4cbf-a75f-395d03bcd366;1.0
+[2024-11-24T05:09:09.885+0000] {spark_submit.py:495} INFO - confs: [default]
+[2024-11-24T05:09:29.484+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2 in central
+[2024-11-24T05:09:32.571+0000] {spark_submit.py:495} INFO - found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.2 in central
+[2024-11-24T05:09:32.748+0000] {spark_submit.py:495} INFO - found org.apache.kafka#kafka-clients;3.3.2 in central
+[2024-11-24T05:09:33.301+0000] {spark_submit.py:495} INFO - found org.lz4#lz4-java;1.8.0 in central
+[2024-11-24T05:09:34.639+0000] {spark_submit.py:495} INFO - found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2024-11-24T05:09:40.166+0000] {spark_submit.py:495} INFO - found org.slf4j#slf4j-api;2.0.6 in central
+[2024-11-24T05:09:44.586+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2024-11-24T05:09:45.418+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2024-11-24T05:09:48.770+0000] {spark_submit.py:495} INFO - found com.google.code.findbugs#jsr305;3.0.0 in central
+[2024-11-24T05:09:48.798+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-pool2;2.11.1 in central
+[2024-11-24T05:09:54.756+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-client;3.2.1 in central
+[2024-11-24T05:09:58.456+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-hdfs-client;3.2.1 in central
+[2024-11-24T05:10:05.319+0000] {spark_submit.py:495} INFO - found com.squareup.okhttp#okhttp;2.7.5 in central
+[2024-11-24T05:10:08.005+0000] {spark_submit.py:495} INFO - found com.squareup.okio#okio;1.6.0 in central
+[2024-11-24T05:10:13.746+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.core#jackson-annotations;2.9.8 in central
+[2024-11-24T05:10:19.653+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.core#jackson-databind;2.9.8 in central
+[2024-11-24T05:10:20.575+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.core#jackson-core;2.9.8 in central
+[2024-11-24T05:10:23.281+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-yarn-api;3.2.1 in central
+[2024-11-24T05:10:27.351+0000] {spark_submit.py:495} INFO - found com.google.guava#guava;27.0-jre in central
+[2024-11-24T05:10:29.993+0000] {spark_submit.py:495} INFO - found com.google.guava#failureaccess;1.0 in central
+[2024-11-24T05:10:30.847+0000] {spark_submit.py:495} INFO - found com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava in central
+[2024-11-24T05:10:31.507+0000] {spark_submit.py:495} INFO - found org.checkerframework#checker-qual;2.5.2 in central
+[2024-11-24T05:10:34.999+0000] {spark_submit.py:495} INFO - found com.google.errorprone#error_prone_annotations;2.2.0 in central
+[2024-11-24T05:10:35.613+0000] {spark_submit.py:495} INFO - found com.google.j2objc#j2objc-annotations;1.1 in central
+[2024-11-24T05:10:40.565+0000] {spark_submit.py:495} INFO - found org.codehaus.mojo#animal-sniffer-annotations;1.17 in central
+[2024-11-24T05:10:41.243+0000] {spark_submit.py:495} INFO - found javax.xml.bind#jaxb-api;2.2.11 in central
+[2024-11-24T05:10:43.930+0000] {spark_submit.py:495} INFO - found com.google.protobuf#protobuf-java;2.5.0 in central
+[2024-11-24T05:10:44.745+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-yarn-client;3.2.1 in central
+[2024-11-24T05:10:47.611+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-mapreduce-client-core;3.2.1 in central
+[2024-11-24T05:10:48.632+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-yarn-common;3.2.1 in central
+[2024-11-24T05:10:49.485+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-auth;3.2.1 in central
+[2024-11-24T05:10:49.515+0000] {spark_submit.py:495} INFO - found commons-codec#commons-codec;1.11 in central
+[2024-11-24T05:10:49.534+0000] {spark_submit.py:495} INFO - found org.apache.httpcomponents#httpclient;4.5.6 in central
+[2024-11-24T05:10:49.563+0000] {spark_submit.py:495} INFO - found org.apache.httpcomponents#httpcore;4.4.10 in central
+[2024-11-24T05:10:50.053+0000] {spark_submit.py:495} INFO - found com.nimbusds#nimbus-jose-jwt;4.41.1 in central
+[2024-11-24T05:10:50.849+0000] {spark_submit.py:495} INFO - found com.github.stephenc.jcip#jcip-annotations;1.0-1 in central
+[2024-11-24T05:10:54.374+0000] {spark_submit.py:495} INFO - found net.minidev#json-smart;2.3 in central
+[2024-11-24T05:10:55.353+0000] {spark_submit.py:495} INFO - found net.minidev#accessors-smart;1.2 in central
+[2024-11-24T05:10:59.873+0000] {spark_submit.py:495} INFO - found org.ow2.asm#asm;5.0.4 in central
+[2024-11-24T05:11:01.096+0000] {spark_submit.py:495} INFO - found org.apache.zookeeper#zookeeper;3.4.13 in central
+[2024-11-24T05:11:01.115+0000] {spark_submit.py:495} INFO - found log4j#log4j;1.2.17 in central
+[2024-11-24T05:11:06.603+0000] {spark_submit.py:495} INFO - found org.apache.yetus#audience-annotations;0.5.0 in central
+[2024-11-24T05:11:10.241+0000] {spark_submit.py:495} INFO - found org.apache.curator#curator-framework;2.13.0 in central
+[2024-11-24T05:11:11.782+0000] {spark_submit.py:495} INFO - found org.apache.curator#curator-client;2.13.0 in central
+[2024-11-24T05:11:17.643+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-simplekdc;1.0.1 in central
+[2024-11-24T05:11:22.259+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-admin;1.0.1 in central
+[2024-11-24T05:11:23.124+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-server;1.0.1 in central
+[2024-11-24T05:11:23.978+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-common;1.0.1 in central
+[2024-11-24T05:11:24.033+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-config;1.0.1 in central
+[2024-11-24T05:11:24.634+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-crypto;1.0.1 in central
+[2024-11-24T05:11:25.546+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-util;1.0.1 in central
+[2024-11-24T05:11:25.691+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-core;1.0.1 in central
+[2024-11-24T05:11:25.762+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-pkix;1.0.1 in central
+[2024-11-24T05:11:25.848+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-asn1;1.0.1 in central
+[2024-11-24T05:11:26.050+0000] {spark_submit.py:495} INFO - found commons-io#commons-io;2.5 in central
+[2024-11-24T05:11:26.762+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-identity;1.0.1 in central
+[2024-11-24T05:11:26.861+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerb-util;1.0.1 in central
+[2024-11-24T05:11:27.525+0000] {spark_submit.py:495} INFO - found org.apache.kerby#kerby-xdr;1.0.1 in central
+[2024-11-24T05:11:27.540+0000] {spark_submit.py:495} INFO - found org.apache.commons#commons-compress;1.18 in central
+[2024-11-24T05:11:30.745+0000] {spark_submit.py:495} INFO - found javax.servlet#javax.servlet-api;3.1.0 in central
+[2024-11-24T05:11:31.295+0000] {spark_submit.py:495} INFO - found org.eclipse.jetty#jetty-util;9.3.24.v20180605 in central
+[2024-11-24T05:11:31.951+0000] {spark_submit.py:495} INFO - found com.sun.jersey#jersey-core;1.19 in central
+[2024-11-24T05:11:32.508+0000] {spark_submit.py:495} INFO - found javax.ws.rs#jsr311-api;1.1.1 in central
+[2024-11-24T05:11:33.191+0000] {spark_submit.py:495} INFO - found com.sun.jersey#jersey-client;1.19 in central
+[2024-11-24T05:11:33.227+0000] {spark_submit.py:495} INFO - found commons-cli#commons-cli;1.2 in central
+[2024-11-24T05:11:37.711+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.module#jackson-module-jaxb-annotations;2.9.8 in central
+[2024-11-24T05:11:41.812+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.jaxrs#jackson-jaxrs-json-provider;2.9.8 in central
+[2024-11-24T05:11:42.626+0000] {spark_submit.py:495} INFO - found com.fasterxml.jackson.jaxrs#jackson-jaxrs-base;2.9.8 in central
+[2024-11-24T05:11:43.462+0000] {spark_submit.py:495} INFO - found jline#jline;0.9.94 in central
+[2024-11-24T05:11:45.547+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-mapreduce-client-jobclient;3.2.1 in central
+[2024-11-24T05:11:45.582+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-mapreduce-client-common;3.2.1 in central
+[2024-11-24T05:11:45.620+0000] {spark_submit.py:495} INFO - found org.apache.hadoop#hadoop-annotations;3.2.1 in central
+[2024-11-24T05:11:45.962+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.jar ...
+[2024-11-24T05:11:46.994+0000] {spark_submit.py:495} INFO - [SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2!spark-sql-kafka-0-10_2.12.jar (1274ms)
+[2024-11-24T05:11:47.288+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.jar ...
+[2024-11-24T05:11:47.520+0000] {spark_submit.py:495} INFO - [SUCCESSFUL ] org.apache.hadoop#hadoop-client;3.2.1!hadoop-client.jar (513ms)
+[2024-11-24T05:11:47.734+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.4.2/spark-token-provider-kafka-0-10_2.12-3.4.2.jar ...
+[2024-11-24T05:11:48.020+0000] {spark_submit.py:495} INFO - [SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.4.2!spark-token-provider-kafka-0-10_2.12.jar (494ms)
+[2024-11-24T05:11:48.524+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.3.2/kafka-clients-3.3.2.jar ...
+[2024-11-24T05:12:26.230+0000] {spark_submit.py:495} INFO - [SUCCESSFUL ] org.apache.kafka#kafka-clients;3.3.2!kafka-clients.jar (38207ms)
+[2024-11-24T05:12:26.884+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2024-11-24T05:12:27.104+0000] {spark_submit.py:495} INFO - [SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (867ms)
+[2024-11-24T05:12:27.316+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2024-11-24T05:12:27.814+0000] {spark_submit.py:495} INFO - [SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (705ms)
+[2024-11-24T05:12:28.018+0000] {spark_submit.py:495} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.4/hadoop-client-runtime-3.3.4.jar ...
+[2024-11-24T05:13:25.687+0000] {local_task_job_runner.py:313} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2024-11-24T05:13:25.691+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-11-24T05:13:25.695+0000] {process_utils.py:132} INFO - Sending 15 to group 230. PIDs of all processes in the group: [259, 230]
+[2024-11-24T05:13:25.696+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 230
+[2024-11-24T05:13:25.712+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-11-24T05:13:25.717+0000] {spark_submit.py:620} INFO - Sending kill signal to spark-submit
+[2024-11-24T05:13:25.722+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-24T05:13:25.939+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=259, status='terminated', started='05:08:56') (259) terminated with exit code None
+[2024-11-24T05:13:25.940+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=230, status='terminated', exitcode=0, started='05:08:56') (230) terminated with exit code 0

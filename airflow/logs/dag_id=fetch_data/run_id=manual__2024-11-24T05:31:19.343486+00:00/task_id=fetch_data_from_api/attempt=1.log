@@ -1,0 +1,28 @@
+[2024-11-24T05:31:24.070+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-24T05:31:24.292+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api manual__2024-11-24T05:31:19.343486+00:00 [queued]>
+[2024-11-24T05:31:24.305+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_data.fetch_data_from_api manual__2024-11-24T05:31:19.343486+00:00 [queued]>
+[2024-11-24T05:31:24.306+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-24T05:31:24.322+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_from_api> on 2024-11-24 05:31:19.343486+00:00
+[2024-11-24T05:31:24.328+0000] {standard_task_runner.py:64} INFO - Started process 1576 to run task
+[2024-11-24T05:31:24.332+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'fetch_data', 'fetch_data_from_api', 'manual__2024-11-24T05:31:19.343486+00:00', '--job-id', '276', '--raw', '--subdir', 'DAGS_FOLDER/***_producer.py', '--cfg-path', '/tmp/tmpmc6c6mn1']
+[2024-11-24T05:31:24.335+0000] {standard_task_runner.py:91} INFO - Job 276: Subtask fetch_data_from_api
+[2024-11-24T05:31:24.422+0000] {task_command.py:426} INFO - Running <TaskInstance: fetch_data.fetch_data_from_api manual__2024-11-24T05:31:19.343486+00:00 [running]> on host a9401edbac39
+[2024-11-24T05:31:24.587+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='fetch_data' AIRFLOW_CTX_TASK_ID='fetch_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2024-11-24T05:31:19.343486+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-24T05:31:19.343486+00:00'
+[2024-11-24T05:31:24.589+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-24T05:31:24.638+0000] {logging_mixin.py:188} INFO - 1000
+[2024-11-24T05:31:24.690+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-24T05:31:24.696+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-24T05:31:32.704+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 0
+[2024-11-24T05:31:32.726+0000] {airflow_producer.py:62} INFO - Offset: 0, Records fetched: 100
+[2024-11-24T05:31:32.769+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: connecting to 10.0.2.15:9092 [('10.0.2.15', 9092) IPv4]
+[2024-11-24T05:31:32.783+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=10.0.2.15:9092 <connecting> [IPv4 ('10.0.2.15', 9092)]>: Connection complete.
+[2024-11-24T05:31:32.783+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=10.0.2.15:9092 <connected> [IPv4 ('10.0.2.15', 9092)]>: Closing connection. 
+[2024-11-24T05:31:35.193+0000] {airflow_producer.py:78} INFO - Streamed 100 records in this batch.
+[2024-11-24T05:31:45.204+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 100
+[2024-11-24T05:31:45.253+0000] {airflow_producer.py:62} INFO - Offset: 100, Records fetched: 100
+[2024-11-24T05:31:49.415+0000] {airflow_producer.py:78} INFO - Streamed 100 records in this batch.
+[2024-11-24T05:32:00.000+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 200
+[2024-11-24T05:32:00.100+0000] {airflow_producer.py:62} INFO - Offset: 200, Records fetched: 100
+[2024-11-24T05:32:04.530+0000] {airflow_producer.py:78} INFO - Streamed 100 records in this batch.
+[2024-11-24T05:32:19.998+0000] {airflow_producer.py:35} INFO - Fetched 100 records from API with offset 300
+[2024-11-24T05:32:20.360+0000] {airflow_producer.py:62} INFO - Offset: 300, Records fetched: 100

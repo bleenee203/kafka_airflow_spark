@@ -1,0 +1,197 @@
+[2024-11-24T02:53:40.340+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-24T02:53:40.892+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-23T16:59:34.757530+00:00 [queued]>
+[2024-11-24T02:53:40.911+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-23T16:59:34.757530+00:00 [queued]>
+[2024-11-24T02:53:40.911+0000] {taskinstance.py:2306} INFO - Starting attempt 5 of 1
+[2024-11-24T02:53:41.237+0000] {taskinstance.py:2330} INFO - Executing <Task(SparkSubmitOperator): sensor_data_consumer> on 2024-11-23 16:59:34.757530+00:00
+[2024-11-24T02:53:41.264+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sensor_data_consumer', 'sensor_data_consumer', 'manual__2024-11-23T16:59:34.757530+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/***_consumer.py', '--cfg-path', '/tmp/tmpmi6fagcx']
+[2024-11-24T02:53:41.267+0000] {standard_task_runner.py:91} INFO - Job 68: Subtask sensor_data_consumer
+[2024-11-24T02:53:41.254+0000] {standard_task_runner.py:64} INFO - Started process 238 to run task
+[2024-11-24T02:53:41.350+0000] {task_command.py:426} INFO - Running <TaskInstance: sensor_data_consumer.sensor_data_consumer manual__2024-11-23T16:59:34.757530+00:00 [running]> on host 355cdd50bbb7
+[2024-11-24T02:53:41.523+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bich Ly' AIRFLOW_CTX_DAG_ID='sensor_data_consumer' AIRFLOW_CTX_TASK_ID='sensor_data_consumer' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T16:59:34.757530+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T16:59:34.757530+00:00'
+[2024-11-24T02:53:41.524+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-24T02:53:41.551+0000] {base.py:84} INFO - Using connection ID 'spark_default' for task execution.
+[2024-11-24T02:53:41.552+0000] {spark_submit.py:344} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py
+[2024-11-24T02:53:51.766+0000] {spark_submit.py:495} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2024-11-24T02:53:52.271+0000] {spark_submit.py:495} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2024-11-24T02:53:52.271+0000] {spark_submit.py:495} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2024-11-24T02:53:52.274+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12 added as a dependency
+[2024-11-24T02:53:52.274+0000] {spark_submit.py:495} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2024-11-24T02:53:52.275+0000] {spark_submit.py:495} INFO - org.apache.hadoop#hadoop-client added as a dependency
+[2024-11-24T02:53:52.277+0000] {spark_submit.py:495} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-8b0e3712-ba55-40f2-af14-f27d973514dc;1.0
+[2024-11-24T02:53:52.277+0000] {spark_submit.py:495} INFO - confs: [default]
+[2024-11-24T02:54:09.107+0000] {spark_submit.py:495} INFO - :: resolution report :: resolve 16828ms :: artifacts dl 0ms
+[2024-11-24T02:54:09.108+0000] {spark_submit.py:495} INFO - :: modules in use:
+[2024-11-24T02:54:09.109+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-24T02:54:09.109+0000] {spark_submit.py:495} INFO - |                  |            modules            ||   artifacts   |
+[2024-11-24T02:54:09.109+0000] {spark_submit.py:495} INFO - |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2024-11-24T02:54:09.109+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-24T02:54:09.109+0000] {spark_submit.py:495} INFO - |      default     |   3   |   0   |   0   |   0   ||   0   |   0   |
+[2024-11-24T02:54:09.109+0000] {spark_submit.py:495} INFO - ---------------------------------------------------------------------
+[2024-11-24T02:54:09.110+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.110+0000] {spark_submit.py:495} INFO - :: problems summary ::
+[2024-11-24T02:54:09.110+0000] {spark_submit.py:495} INFO - :::: WARNINGS
+[2024-11-24T02:54:09.110+0000] {spark_submit.py:495} INFO - module not found: org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2
+[2024-11-24T02:54:09.125+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.126+0000] {spark_submit.py:495} INFO - ==== local-m2-cache: tried
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.pom
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2!spark-streaming-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.jar
+[2024-11-24T02:54:09.127+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.128+0000] {spark_submit.py:495} INFO - ==== local-ivy-cache: tried
+[2024-11-24T02:54:09.128+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.128+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.spark/spark-streaming-kafka-0-10_2.12/3.4.2/ivys/ivy.xml
+[2024-11-24T02:54:09.147+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.148+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2!spark-streaming-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.148+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.148+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.spark/spark-streaming-kafka-0-10_2.12/3.4.2/jars/spark-streaming-kafka-0-10_2.12.jar
+[2024-11-24T02:54:09.148+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.148+0000] {spark_submit.py:495} INFO - ==== central: tried
+[2024-11-24T02:54:09.148+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.149+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.pom
+[2024-11-24T02:54:09.149+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.149+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2!spark-streaming-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.149+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.149+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.jar
+[2024-11-24T02:54:09.149+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.152+0000] {spark_submit.py:495} INFO - ==== spark-packages: tried
+[2024-11-24T02:54:09.152+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.152+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.pom
+[2024-11-24T02:54:09.152+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2!spark-streaming-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.jar
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - module not found: org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - ==== local-m2-cache: tried
+[2024-11-24T02:54:09.153+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.pom
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2!spark-sql-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.jar
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - ==== local-ivy-cache: tried
+[2024-11-24T02:54:09.154+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.155+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.spark/spark-sql-kafka-0-10_2.12/3.4.2/ivys/ivy.xml
+[2024-11-24T02:54:09.155+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.155+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2!spark-sql-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.155+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.155+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.spark/spark-sql-kafka-0-10_2.12/3.4.2/jars/spark-sql-kafka-0-10_2.12.jar
+[2024-11-24T02:54:09.155+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - ==== central: tried
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.pom
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2!spark-sql-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.jar
+[2024-11-24T02:54:09.156+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - ==== spark-packages: tried
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.pom
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - -- artifact org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2!spark-sql-kafka-0-10_2.12.jar:
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.157+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.jar
+[2024-11-24T02:54:09.158+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.158+0000] {spark_submit.py:495} INFO - module not found: org.apache.hadoop#hadoop-client;3.2.1
+[2024-11-24T02:54:09.158+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.158+0000] {spark_submit.py:495} INFO - ==== local-m2-cache: tried
+[2024-11-24T02:54:09.158+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.158+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.pom
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;3.2.1!hadoop-client.jar:
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - file:/home/***/.m2/repository/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.jar
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - ==== local-ivy-cache: tried
+[2024-11-24T02:54:09.159+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.hadoop/hadoop-client/3.2.1/ivys/ivy.xml
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;3.2.1!hadoop-client.jar:
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - /home/***/.ivy2/local/org.apache.hadoop/hadoop-client/3.2.1/jars/hadoop-client.jar
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - ==== central: tried
+[2024-11-24T02:54:09.160+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.pom
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;3.2.1!hadoop-client.jar:
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.jar
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - ==== spark-packages: tried
+[2024-11-24T02:54:09.161+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.pom
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - -- artifact org.apache.hadoop#hadoop-client;3.2.1!hadoop-client.jar:
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - https://repos.spark-packages.org/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.jar
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - ::::::::::::::::::::::::::::::::::::::::::::::
+[2024-11-24T02:54:09.162+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - ::          UNRESOLVED DEPENDENCIES         ::
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - ::::::::::::::::::::::::::::::::::::::::::::::
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - :: org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2: not found
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - :: org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2: not found
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - :: org.apache.hadoop#hadoop-client;3.2.1: not found
+[2024-11-24T02:54:09.163+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - ::::::::::::::::::::::::::::::::::::::::::::::
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - :::: ERRORS
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - Server access error at url https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.pom (java.net.SocketException: Network is unreachable)
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - Server access error at url https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.4.2/spark-streaming-kafka-0-10_2.12-3.4.2.jar (java.net.SocketException: Network is unreachable)
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.164+0000] {spark_submit.py:495} INFO - Server access error at url https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.pom (java.net.SocketException: Network is unreachable)
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - Server access error at url https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.4.2/spark-sql-kafka-0-10_2.12-3.4.2.jar (java.net.SocketException: Network is unreachable)
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - Server access error at url https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.pom (java.net.SocketException: Network is unreachable)
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - Server access error at url https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/3.2.1/hadoop-client-3.2.1.jar (java.net.SocketException: Network is unreachable)
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - 
+[2024-11-24T02:54:09.165+0000] {spark_submit.py:495} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - Exception in thread "main" java.lang.RuntimeException: [unresolved dependency: org.apache.spark#spark-streaming-kafka-0-10_2.12;3.4.2: not found, unresolved dependency: org.apache.spark#spark-sql-kafka-0-10_2.12;3.4.2: not found, unresolved dependency: org.apache.hadoop#hadoop-client;3.2.1: not found]
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1528)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:332)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:955)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:192)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:215)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+[2024-11-24T02:54:09.166+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1111)
+[2024-11-24T02:54:09.167+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1120)
+[2024-11-24T02:54:09.167+0000] {spark_submit.py:495} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2024-11-24T02:54:09.168+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-24T02:54:09.225+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 426, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.
+[2024-11-24T02:54:09.239+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=sensor_data_consumer, task_id=sensor_data_consumer, run_id=manual__2024-11-23T16:59:34.757530+00:00, execution_date=20241123T165934, start_date=20241124T025340, end_date=20241124T025409
+[2024-11-24T02:54:09.365+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 68 for task sensor_data_consumer (Cannot execute: spark-submit --master spark://spark-master:7077 --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.4.2,org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.2,org.apache.hadoop:hadoop-client:3.2.1 --name KafkaSparkHDFS /opt/***/dags/spark_streaming_job.py. Error code is: 1.; 238)
+[2024-11-24T02:54:09.392+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2024-11-24T02:54:09.440+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-24T02:54:09.446+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
